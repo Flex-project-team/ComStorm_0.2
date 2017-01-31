@@ -1,24 +1,16 @@
-import React,{
-    Component,
-    StyleSheet,
-    View,
-    Text,
-    PanResponder,
-    Animated,
-    Dimensions
-} from 'react-native';
+import { Component, StyleSheet, View, Text, PanResponder, Animated, Dimensions } from 'react-native';
 
 export default class Viewport extends Component {
   constructor(props){
     super(props);
 
     this.state = {
-        pan     : new Animated.ValueXY()   //Step 1
+        pan: new Animated.ValueXY()
     };
 
-    this.panResponder = PanResponder.create({    //Step 2
+    this.panResponder = PanResponder.create({
         onStartShouldSetPanResponder : () => true,
-        onPanResponderMove           : Animated.event([null,{ //Step 3
+        onPanResponderMove           : Animated.event([null,{
             dx : this.state.pan.x,
             dy : this.state.pan.y
         }]),
@@ -30,7 +22,7 @@ export default class Viewport extends Component {
     return (
         <View style={styles.draggableContainer}>
             <Animated.View
-                {...this.panResponder.panHandlers}                       
+                {...this.panResponder.panHandlers}
                 style={[this.state.pan.getLayout(), styles.circle]}>
                 <Text style={styles.text}>Drag me!</Text>
             </Animated.View>
