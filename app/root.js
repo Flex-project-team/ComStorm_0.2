@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import TextBubble from './components/text_bubble';
+
 import {
   View,
   Text,
@@ -13,6 +15,7 @@ export default class Root extends Component {
     render() {
       return (
         <View style={styles.container}>
+        <TextBubble />
           <Text style={styles.welcome}>
             This Is The Root Component!
           </Text>

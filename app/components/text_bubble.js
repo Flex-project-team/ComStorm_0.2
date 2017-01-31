@@ -1,17 +1,12 @@
-import React, { Component } from 'react';
-import {
-  Text,
-} from 'react-native';
-
-export default class textBubble extends Component {
-  constructor(props) {
-    super(props);
-  }
-
+import TextField from 'react-native-md-textinput';
+import React, {Component} from 'react';
+import {ScrollView} from 'react-native';
+export default class TextBubble extends React.Component {
   render() {
     return (
-      <Text>This is the text bubble!</Text>
+      <ScrollView>
+        <TextField label={'Name'} highlightColor={'#00BCD4'} />
+      </ScrollView>
     );
   }
-
 }
