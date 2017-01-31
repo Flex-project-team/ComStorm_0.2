@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import Slider from './components/slider/slider.js';
+import ViewPort from './components/drag_and_drop/viewport';
+
 import {
   View,
   Text,
@@ -14,6 +16,7 @@ export default class Root extends Component {
     render() {
       return (
         <View style={styles.container}>
+          <ViewPort />
           <Slider />
           <Text style={styles.welcome}>
             This Is The Root Component!
