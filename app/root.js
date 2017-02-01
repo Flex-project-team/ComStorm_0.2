@@ -23,6 +23,7 @@ export default class Root extends Component {
 
           <Slider />
           <TextBubble />
+
           <ViewPort />
         </View>
       );

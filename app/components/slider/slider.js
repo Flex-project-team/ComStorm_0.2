@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import Viewport from '../drag_and_drop/viewport';
 import { View, ScrollView, ListView, Image, StyleSheet, TouchableOpacity } from 'react-native';
+
 
 export default class Slider extends Component {
   constructor(props) {
@@ -26,11 +28,11 @@ export default class Slider extends Component {
       require(`../../images/thought-right.png`)
     ];
     let imageViews = imageFiles.map((file, idx) => {
-      return <TouchableOpacity key={idx}>
+      return (<TouchableOpacity key={idx}>
         <View style={styles.image_view}>
-          <Image source={file} resizeMode={Image.resizeMode.contain} style={styles.image}/>
+          <Viewport image={<Image source={file} resizeMode={Image.resizeMode.contain} style={styles.image}/>} />
         </View>
-      </TouchableOpacity>;
+      </TouchableOpacity>);
     });
 
     return (
