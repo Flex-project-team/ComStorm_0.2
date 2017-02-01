@@ -21,6 +21,10 @@ export default class Root extends Component {
 
           <TextBubble />
           <ViewPort />
+          <Text>
+            {"\n"}
+            {"\n"}
+          </Text>
           <Slider />
 
           <Text style={styles.welcome}>
