@@ -25,7 +25,6 @@ export default class Root extends Component {
             {"\n"}
             {"\n"}
           </Text>
-          <Slider />
         </View>
       );
     }

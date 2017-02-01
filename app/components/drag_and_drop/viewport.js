@@ -1,3 +1,4 @@
+import Slider from './components/slider/slider.js';
 import { StyleSheet, View, Text, PanResponder, Animated, Dimensions } from 'react-native';
 import React, { Component } from 'react';
 
@@ -33,9 +34,8 @@ export default class Viewport extends React.Component {
   render(){
     return (
         <View style={styles.mainContainer}>
-                {// <Text style={styles.text}>Drop me here!</Text>
-              }
 
+          <Slider />
             {this.renderDraggable()}
         </View>
     );
