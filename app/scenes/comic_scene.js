@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 
 import Slider from '../components/slider/slider.js';
 import ViewPort from '../components/drag_and_drop/viewport';
-import TextBubble from '../components/text_input/text_bubble';
 
 import {
   View,
@@ -24,7 +23,6 @@ export default class ComicScene extends Component {
           </View>
           <View style={styles.container}>
           <Slider />
-            <TextBubble />
             <ViewPort />
           </View>
         </View>
