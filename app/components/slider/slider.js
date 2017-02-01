@@ -28,14 +28,14 @@ export default class Slider extends Component {
       require(`../../images/thought-left.png`),
       require(`../../images/thought-right.png`)
     ];
-    let bimageViews = imageFiles.map((file, idx) => {
+    let imageViews = imageFiles.map((file, idx) => {
       return (
         <View key={idx} style={styles.image_view}>
         <Image source={file} resizeMode={Image.resizeMode.contain} style={styles.image}/>
         </View>
       )
     });
-    let imageViews = imageFiles.map((file, idx) => {
+    let draggableImages = imageFiles.map((file, idx) => {
       return (
           <Viewport key={idx} image={<Image source={file} resizeMode={Image.resizeMode.contain} style={styles.image}/>} />
       );
@@ -45,11 +45,11 @@ export default class Slider extends Component {
       <View>
       <View style={styles.viewer}>
         <ScrollView horizontal={true} style={styles.scrollview}>
-        {bimageViews}
+        {imageViews}
         </ScrollView>
       </View>
       <View style={styles.view}>
-        <DrawingBox images={imageViews}/>
+        <DrawingBox images={draggableImages}/>
         </View>
       </View>
     );
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     margin: 5
   },
   view: {
-    height: 225,
+    height: 325,
     width: 392,
     margin: 10,
     backgroundColor: 'blue'
