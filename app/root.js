@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
+
 import Slider from './components/slider/slider.js';
+import ViewPort from './components/drag_and_drop/viewport';
+import TextBubble from './components/text_bubble';
+
 import {
   View,
   Text,
@@ -14,6 +18,9 @@ export default class Root extends Component {
     render() {
       return (
         <View style={styles.container}>
+
+          <TextBubble />
+          <ViewPort />
           <Slider />
           <Text style={styles.welcome}>
             This Is The Root Component!

@@ -1,5 +1,5 @@
-import { Component } from 'react';
 import { StyleSheet, View, Text, PanResponder, Animated, Dimensions } from 'react-native';
+import React, { Component } from 'react';
 
 export default class Viewport extends Component {
   constructor(props){
