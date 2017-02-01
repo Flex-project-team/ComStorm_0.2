@@ -21,9 +21,9 @@ export default class Root extends Component {
         <View style={styles.container}>
           <Image source={require('./images/logo.png')} style={{margin: 10 }}/>
 
+          <Slider />
           <TextBubble />
           <ViewPort />
-          <Slider />
         </View>
       );
     }
@@ -34,6 +34,6 @@ const styles = StyleSheet.create({
    flex: 1,
    justifyContent: 'center',
    alignItems: 'center',
-   backgroundColor: '#F5FCFF',
+   backgroundColor: '#FBF9E9',
  }
 });
