@@ -35,7 +35,7 @@ export default class MainScene extends Component {
             onPress={this.createComicScreen.bind(this)}
             color='#FACC11'
             title="Create Comic"
-            accessibilityLabel="Learn more about this purple button" />
+            accessibilityLabel="Learn more about this yellow button" />
         </View>
       </View>
     );
