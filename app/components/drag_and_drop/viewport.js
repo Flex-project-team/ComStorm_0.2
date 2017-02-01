@@ -1,46 +1,49 @@
-import { StyleSheet, View, Text, PanResponder, Animated, Dimensions } from 'react-native';
+// import Slider from '../slider/slider.js';
+import { StyleSheet, View, Text, PanResponder, Animated, Dimensions, Image } from 'react-native';
 import React, { Component } from 'react';
 
-export default class Viewport extends Component {
+export default class Viewport extends React.Component {
   constructor(props){
     super(props);
-
+    console.log(props);
     this.state = {
+        x: props.image,
         pan: new Animated.ValueXY()
     };
 
     this.panResponder = PanResponder.create({
         onStartShouldSetPanResponder : () => true,
+        onPanResponderGrant: () => {},
         onPanResponderMove           : Animated.event([null,{
             dx : this.state.pan.x,
             dy : this.state.pan.y
         }]),
-        onPanResponderRelease        : (e, gesture) => {} //Step 4
+        onPanResponderRelease        : (e, gesture) => {
+        }
     });
   }
 
   renderDraggable(){
     return (
-        <View style={styles.draggableContainer}>
+        <View>
             <Animated.View
                 {...this.panResponder.panHandlers}
-                style={[this.state.pan.getLayout(), styles.circle]}>
-                <Text style={styles.text}>Drag me!</Text>
+                style={[this.state.pan.getLayout(), {width: 40, height: 90, marginRight: 20}]}>
+                  {this.props.image}
             </Animated.View>
         </View>
     );
   }
   render(){
     return (
-        <View style={styles.mainContainer}>
-            <View style={styles.dropZone}>
-                <Text style={styles.text}>Drop me here!</Text>
-            </View>
-
+        <View>
             {this.renderDraggable()}
         </View>
     );
   }
+
+
+
 
 }
 
