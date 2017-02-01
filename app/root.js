@@ -1,40 +1,34 @@
-import React, {Component} from 'react';
-
-import Slider from './components/slider/slider.js';
-import ViewPort from './components/drag_and_drop/viewport';
-import TextBubble from './components/text_bubble';
-
+import React, { Component } from 'react';
 import {
+  Navigator,
   View,
-  Image,
-  Text,
   StyleSheet,
 } from 'react-native';
+
+import MainScene from './scenes/main_scene.js';
+import ComicScene from './scenes/comic_scene.js';
 
 export default class Root extends Component {
   constructor(props) {
     super(props);
   }
 
-    render() {
-      return (
-        <View style={styles.container}>
-          <Image source={require('./images/logo.png')} style={{margin: 10 }}/>
 
-          <Slider />
-          { //<TextBubble />
-}
-          <ViewPort />
-        </View>
-      );
+  renderScene(route, navigator) {
+    if(route.name === 'MainScene') {
+      return <MainScene navigator={navigator}/>;
     }
-}
+    if(route.name === 'ComicScene') {
+      return <ComicScene navigator={navigator}/>;
+    }
+  }
 
-const styles = StyleSheet.create({
- container: {
-   flex: 1,
-   justifyContent: 'center',
-   alignItems: 'center',
-   backgroundColor: '#FBF9E9',
- }
-});
+  render() {
+    return (
+      <Navigator
+        style={{ flex:1 }}
+        initialRoute={{ name: 'MainScene' }}
+        renderScene={ this.renderScene } />
+    );
+  }
+}
