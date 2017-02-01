@@ -21,18 +21,11 @@ export default class Root extends Component {
 
           <TextBubble />
           <ViewPort />
+          <Text>
+            {"\n"}
+            {"\n"}
+          </Text>
           <Slider />
-
-          <Text style={styles.welcome}>
-            This Is The Root Component!
-          </Text>
-          <Text style={styles.instructions}>
-            To get started, edit index.android.js
-          </Text>
-          <Text style={styles.instructions}>
-            Double tap R on your keyboard to reload,{'\n'}
-            Shake or press menu button for dev menu
-          </Text>
         </View>
       );
     }
