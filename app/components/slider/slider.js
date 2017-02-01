@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { ScrollView, ListView, Image, View } from 'react-native';
+import Viewport from '../drag_and_drop/viewport';
 
 export default class Slider extends Component {
   constructor(props) {
@@ -7,9 +8,10 @@ export default class Slider extends Component {
   }
 
   render() {
+    let vSource = {uri: '../../images/calling.png'};
     return (
       <View>
-        <Image source={require('../../images/calling.png')} style={{width: 40, height: 90, marginRight: 20}} />
+        <Viewport image={vSource}}/>
         <Image source={require('../../images/cry.png')} style={{width: 40, height: 90, marginRight: 20}} />
         <Image source={require('../../images/handstand.png')} style={{width: 40, height: 90, marginRight: 20}} />
         <Image source={require('../../images/question.png')} style={{width: 40, height: 90, marginRight: 20}} />

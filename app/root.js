@@ -20,7 +20,7 @@ export default class Root extends Component {
         <View style={styles.container}>
 
           <TextBubble />
-          <ViewPort />
+          <Slider />
           <Text>
             {"\n"}
             {"\n"}
