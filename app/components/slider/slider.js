@@ -53,7 +53,8 @@ const styles = StyleSheet.create({
   image_view: {
     backgroundColor: '#FBF9E9',
     borderRadius: 10,
-    margin: 5
+    width: 100,
+    margin: 8
   },
   view: {
     height: 100,
