@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView, ListView, Image } from 'react-native';
+import { ScrollView, ListView, Image, View } from 'react-native';
 
 export default class Slider extends Component {
   constructor(props) {
@@ -8,7 +8,7 @@ export default class Slider extends Component {
 
   render() {
     return (
-      <ScrollView horizontal={true} >
+      <View>
         <Image source={require('../../images/calling.png')} style={{width: 40, height: 90, marginRight: 20}} />
         <Image source={require('../../images/cry.png')} style={{width: 40, height: 90, marginRight: 20}} />
         <Image source={require('../../images/handstand.png')} style={{width: 40, height: 90, marginRight: 20}} />
@@ -21,7 +21,7 @@ export default class Slider extends Component {
         <Image source={require('../../images/potato.png')} style={{width: 40, height: 90, marginRight: 20}} />
         <Image source={require('../../images/walking.png')} style={{width: 40, height: 90, marginRight: 20}} />
         <Image source={require('../../images/gymnastics.png')} style={{width: 40, height: 90, marginRight: 20}} />
-      </ScrollView>
+      </View>
     );
   }
 }

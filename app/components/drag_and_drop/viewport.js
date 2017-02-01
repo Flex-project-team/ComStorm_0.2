@@ -1,4 +1,4 @@
-import Slider from './components/slider/slider.js';
+import Slider from '../slider/slider.js';
 import { StyleSheet, View, Text, PanResponder, Animated, Dimensions } from 'react-native';
 import React, { Component } from 'react';
 
@@ -16,30 +16,36 @@ export default class Viewport extends React.Component {
             dx : this.state.pan.x,
             dy : this.state.pan.y
         }]),
-        onPanResponderRelease        : (e, gesture) => {}
+        onPanResponderRelease        : (e, gesture) => {
+        }
     });
-  }
+}
+
+
 
   renderDraggable(){
     return (
-        <View style={styles.draggableContainer}>
+        <View>
             <Animated.View
                 {...this.panResponder.panHandlers}
-                style={[this.state.pan.getLayout(), styles.circle]}>
-                <Text style={styles.text}>Drag me!</Text>
+                style={this.state.pan.getLayout()}>
+                <Slider />
+
+                <Text>Drag me!</Text>
             </Animated.View>
         </View>
     );
   }
   render(){
     return (
-        <View style={styles.mainContainer}>
+        <View>
 
-          <Slider />
             {this.renderDraggable()}
         </View>
     );
-  }
+}
+
+
 
 }
 
@@ -48,6 +54,10 @@ let Window = Dimensions.get('window');
 let styles = StyleSheet.create({
     mainContainer: {
         flex    : 1
+    },
+    dropZone    : {
+        height         : 100,
+        backgroundColor:'#2c3e50'
     },
     text        : {
         marginTop   : 25,
