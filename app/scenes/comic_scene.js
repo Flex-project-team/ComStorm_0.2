@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import Slider from '../components/slider/slider.js';
 import ViewPort from '../components/drag_and_drop/viewport';
-import TextBubble from '../components/text_bubble';
+import TextBubble from '../components/text_input/text_bubble';
 
 import {
   View,
@@ -23,7 +23,7 @@ export default class ComicScene extends Component {
             <Image source={require('../images/logo.png')} style={{margin: 10 }}/>
           </View>
           <View style={styles.container}>
-            <Slider />
+          <Slider />
             <TextBubble />
             <ViewPort />
           </View>
