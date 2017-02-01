@@ -6,7 +6,6 @@ export default class Slider extends Component {
     super(props);
   }
 
-  // TODO: DRY up the following code
   render() {
     let imageFiles = [
       require(`../../images/calling.png`),
