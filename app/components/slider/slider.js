@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import Viewport from '../drag_and_drop/viewport';
 import { View, ScrollView, ListView, Image, StyleSheet, TouchableOpacity } from 'react-native';
-
+import DrawingBox from '../drawing_box/drawing_box';
 
 export default class Slider extends Component {
   constructor(props) {
     super(props);
   }
 
+  // TODO: DRY up the following code
   render() {
     let imageFiles = [
       require(`../../images/calling.png`),
@@ -28,19 +29,15 @@ export default class Slider extends Component {
       require(`../../images/thought-right.png`)
     ];
     let imageViews = imageFiles.map((file, idx) => {
-      return (<TouchableOpacity key={idx}>
-        <View style={styles.imageHolder}>
+      return (
           <Viewport image={<Image source={file} resizeMode={Image.resizeMode.contain} style={styles.image}/>} />
-        </View>
-      </TouchableOpacity>);
+      );
     });
 
     return (
       <View style={styles.view}>
-        <ScrollView horizontal={true} style={styles.scrollview}>
-          {imageViews}
-        </ScrollView>
-     </View>
+        <DrawingBox images={imageViews}/>
+        </View>
     );
   }
 }
@@ -50,15 +47,16 @@ const styles = StyleSheet.create({
     width: 90,
     height: 90,
   },
-  imageHolder: {
+  image_view: {
     backgroundColor: '#FBF9E9',
     borderRadius: 10,
-    width: 100,
-    margin: 8
+    margin: 5
   },
   view: {
-    height: 100,
-    margin: 10
+    height: 800,
+    width: 400,
+    margin: 10,
+    backgroundColor: 'blue'
   },
   scrollview: {
     backgroundColor: '#FBF081'
