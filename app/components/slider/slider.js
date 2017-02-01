@@ -30,14 +30,14 @@ export default class Slider extends Component {
     ];
     let bimageViews = imageFiles.map((file, idx) => {
       return (
-        <View style={styles.image_view}>
+        <View key={idx} style={styles.image_view}>
         <Image source={file} resizeMode={Image.resizeMode.contain} style={styles.image}/>
         </View>
       )
     });
     let imageViews = imageFiles.map((file, idx) => {
       return (
-          <Viewport image={<Image source={file} resizeMode={Image.resizeMode.contain} style={styles.image}/>} />
+          <Viewport key={idx} image={<Image source={file} resizeMode={Image.resizeMode.contain} style={styles.image}/>} />
       );
     });
 
