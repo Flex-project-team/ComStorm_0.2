@@ -1,12 +1,13 @@
 // import Slider from '../slider/slider.js';
-import { StyleSheet, View, Text, PanResponder, Animated, Dimensions } from 'react-native';
+import { StyleSheet, View, Text, PanResponder, Animated, Dimensions, Image } from 'react-native';
 import React, { Component } from 'react';
 
 export default class Viewport extends React.Component {
   constructor(props){
     super(props);
-
+    console.log(props);
     this.state = {
+        x: props.image,
         pan: new Animated.ValueXY()
     };
 
@@ -28,7 +29,7 @@ export default class Viewport extends React.Component {
             <Animated.View
                 {...this.panResponder.panHandlers}
                 style={this.state.pan.getLayout()}>
-                  <Image source={this.props.image}/>
+                  {this.props.image}
             </Animated.View>
         </View>
     );

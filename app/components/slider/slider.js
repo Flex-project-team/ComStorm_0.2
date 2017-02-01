@@ -8,10 +8,9 @@ export default class Slider extends Component {
   }
 
   render() {
-    let vSource = {uri: '../../images/calling.png'};
     return (
       <View>
-        <Viewport image={vSource}}/>
+        <Viewport image={<Image source={require('../../images/calling.png')}/>}/>
         <Image source={require('../../images/cry.png')} style={{width: 40, height: 90, marginRight: 20}} />
         <Image source={require('../../images/handstand.png')} style={{width: 40, height: 90, marginRight: 20}} />
         <Image source={require('../../images/question.png')} style={{width: 40, height: 90, marginRight: 20}} />
