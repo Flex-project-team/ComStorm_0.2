@@ -6,6 +6,7 @@ import TextBubble from './components/text_bubble';
 
 import {
   View,
+  Image,
   Text,
   StyleSheet,
 } from 'react-native';
@@ -18,6 +19,8 @@ export default class Root extends Component {
     render() {
       return (
         <View style={styles.container}>
+        <Image source={require('./components/images/logo.png')} style={{width: 40, height: 40}} />
+
 
           <TextBubble />
           <ViewPort />
