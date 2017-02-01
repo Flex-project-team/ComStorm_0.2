@@ -28,6 +28,13 @@ export default class Slider extends Component {
       require(`../../images/thought-left.png`),
       require(`../../images/thought-right.png`)
     ];
+    let bimageViews = imageFiles.map((file, idx) => {
+      return (
+        <View style={styles.image_view}>
+        <Image source={file} resizeMode={Image.resizeMode.contain} style={styles.image}/>
+        </View>
+      )
+    });
     let imageViews = imageFiles.map((file, idx) => {
       return (
           <Viewport image={<Image source={file} resizeMode={Image.resizeMode.contain} style={styles.image}/>} />
@@ -35,9 +42,16 @@ export default class Slider extends Component {
     });
 
     return (
+      <View>
+      <View style={styles.viewer}>
+        <ScrollView horizontal={true} style={styles.scrollview}>
+        {bimageViews}
+        </ScrollView>
+      </View>
       <View style={styles.view}>
         <DrawingBox images={imageViews}/>
         </View>
+      </View>
     );
   }
 }
@@ -53,12 +67,16 @@ const styles = StyleSheet.create({
     margin: 5
   },
   view: {
-    height: 800,
-    width: 400,
+    height: 225,
+    width: 392,
     margin: 10,
     backgroundColor: 'blue'
   },
   scrollview: {
     backgroundColor: '#FBF081'
+  },
+  viewer: {
+    height: 100,
+    margin: 10
   }
 });
