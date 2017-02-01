@@ -27,7 +27,7 @@ export default class Root extends Component {
     return (
       <Navigator
         style={{ flex:1 }}
-        initialRoute={{ name: 'MainScene' }}
+        initialRoute={{ name: 'ComicScene' }}
         renderScene={ this.renderScene } />
     );
   }
