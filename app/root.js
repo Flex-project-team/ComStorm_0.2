@@ -22,6 +22,7 @@ export default class Root extends Component {
           <TextBubble />
           <ViewPort />
           <Slider />
+
           <Text style={styles.welcome}>
             This Is The Root Component!
           </Text>

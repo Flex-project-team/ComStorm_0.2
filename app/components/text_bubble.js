@@ -1,6 +1,7 @@
 import TextField from 'react-native-md-textinput';
 import React, {Component} from 'react';
 import {ScrollView, StyleSheet, TextInput} from 'react-native';
+
 export default class TextBubble extends React.Component {
   constructor(props) {
     super(props);
