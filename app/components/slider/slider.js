@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Viewport from '../drag_and_drop/viewport';
 import { View, ScrollView, ListView, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import DrawingBox from '../drawing_box/drawing_box';
+import TextBubble from '../text_input/text_bubble';
 
 export default class Slider extends Component {
   constructor(props) {
@@ -28,6 +29,9 @@ export default class Slider extends Component {
       require(`../../images/thought-left.png`),
       require(`../../images/thought-right.png`)
     ];
+
+    let txtBubble = <Viewport key={999} image={<TextBubble />} />;
+
     let imageViews = imageFiles.map((file, idx) => {
       return (
         <View key={idx} style={styles.image_view}>
@@ -40,6 +44,7 @@ export default class Slider extends Component {
           <Viewport key={idx} image={<Image source={file} resizeMode={Image.resizeMode.contain} style={styles.image}/>} />
       );
     });
+    draggableImages.unshift(txtBubble);
 
     return (
       <View>
