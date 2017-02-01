@@ -6,6 +6,7 @@ export default class Slider extends Component {
     super(props);
   }
 
+  // TODO: DRY up the following code
   render() {
     return (
       <View style={styles.view}>
@@ -116,6 +117,6 @@ const styles = StyleSheet.create({
     margin: 10
   },
   scrollview: {
-    backgroundColor: 'blue'
+    backgroundColor: '#FBF081'
   }
 });
