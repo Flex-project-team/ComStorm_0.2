@@ -21,12 +21,17 @@ export default class Root extends Component {
         <View style={styles.container}>
           <Image source={require('./images/logo.png')} style={{margin: 10 }}/>
 
+          <Slider />
           <TextBubble />
+<<<<<<< HEAD
           <Slider />
           <Text>
             {"\n"}
             {"\n"}
           </Text>
+=======
+          <ViewPort />
+>>>>>>> 60853f133c639a770b39a781e14b890d43272d92
         </View>
       );
     }
@@ -37,16 +42,6 @@ const styles = StyleSheet.create({
    flex: 1,
    justifyContent: 'center',
    alignItems: 'center',
-   backgroundColor: '#F5FCFF',
- },
- welcome: {
-   fontSize: 20,
-   textAlign: 'center',
-   margin: 10,
- },
- instructions: {
-   textAlign: 'center',
-   color: '#333333',
-   marginBottom: 5,
- },
+   backgroundColor: '#FBF9E9',
+ }
 });
