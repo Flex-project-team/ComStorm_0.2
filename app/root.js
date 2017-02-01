@@ -23,15 +23,8 @@ export default class Root extends Component {
 
           <Slider />
           <TextBubble />
-<<<<<<< HEAD
-          <Slider />
-          <Text>
-            {"\n"}
-            {"\n"}
-          </Text>
-=======
+
           <ViewPort />
->>>>>>> 60853f133c639a770b39a781e14b890d43272d92
         </View>
       );
     }
