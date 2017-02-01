@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, ScrollView, ListView, Image, StyleSheet, TouchableOpacity } from 'react-native';
 
-export default class Slider extends Component {
+export default class DrawingBox extends Component {
   constructor(props) {
     super(props);
   }

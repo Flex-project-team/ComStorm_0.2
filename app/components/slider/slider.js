@@ -29,21 +29,13 @@ export default class Slider extends Component {
       require(`../../images/thought-right.png`)
     ];
     let imageViews = imageFiles.map((file, idx) => {
-      return (<TouchableOpacity key={idx}>
-        <View style={styles.image_view}>
+      return (
           <Viewport image={<Image source={file} resizeMode={Image.resizeMode.contain} style={styles.image}/>} />
-        </View>
-      </TouchableOpacity>);
+      );
     });
 
     return (
-      <View style={styles.view}>
-        <ScrollView horizontal={true} style={styles.scrollview}>
-       {imageViews
-       }
-        </ScrollView>
         <DrawingBox images={imageViews}/>
-     </View>
     );
   }
 }

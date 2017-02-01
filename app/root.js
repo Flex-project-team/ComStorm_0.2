@@ -22,8 +22,8 @@ export default class Root extends Component {
           <Image source={require('./images/logo.png')} style={{margin: 10 }}/>
 
           <Slider />
-          <TextBubble />
-
+          { //<TextBubble />
+}
           <ViewPort />
         </View>
       );
