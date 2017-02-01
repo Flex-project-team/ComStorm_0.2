@@ -35,7 +35,9 @@ export default class Slider extends Component {
     });
 
     return (
+      <View style={styles.view}>
         <DrawingBox images={imageViews}/>
+        </View>
     );
   }
 }
@@ -51,8 +53,10 @@ const styles = StyleSheet.create({
     margin: 5
   },
   view: {
-    height: 100,
-    margin: 10
+    height: 800,
+    width: 400,
+    margin: 10,
+    backgroundColor: 'blue'
   },
   scrollview: {
     backgroundColor: '#FBF081'
