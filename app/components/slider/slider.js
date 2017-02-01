@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Viewport from '../drag_and_drop/viewport';
 import { View, ScrollView, ListView, Image, StyleSheet, TouchableOpacity } from 'react-native';
-
+import DrawingBox from '../drawing_box/drawing_box';
 
 export default class Slider extends Component {
   constructor(props) {
@@ -39,8 +39,10 @@ export default class Slider extends Component {
     return (
       <View style={styles.view}>
         <ScrollView horizontal={true} style={styles.scrollview}>
-          {imageViews}
+       {imageViews
+       }
         </ScrollView>
+        <DrawingBox images={imageViews}/>
      </View>
     );
   }
