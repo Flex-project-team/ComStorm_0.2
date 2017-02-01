@@ -13,6 +13,7 @@ export default class Root extends Component {
     super(props);
   }
 
+
   renderScene(route, navigator) {
     if(route.name === 'MainScene') {
       return <MainScene navigator={navigator}/>;
