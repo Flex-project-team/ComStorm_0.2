@@ -19,8 +19,7 @@ export default class Root extends Component {
     render() {
       return (
         <View style={styles.container}>
-        <Image source={require('./components/images/logo.png')} style={{width: 40, height: 40}} />
-
+          <Image source={require('./images/logo.png')} style={{margin: 10 }}/>
 
           <TextBubble />
           <ViewPort />

@@ -14,7 +14,7 @@ export default class TextBubble extends React.Component {
           multiline={true}
           editable = {true}
           maxLength = {100}
-          style={{height: 100, width: 300, borderColor: 'gray', borderWidth: 1}}
+          style={{width: 250, borderColor: 'gray', borderWidth: 1}}
           onChangeText={(text) => this.setState({text})}
           value={this.state.text}
           borderColor={"#000000"}
