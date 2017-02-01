@@ -29,7 +29,7 @@ export default class Slider extends Component {
     ];
     let imageViews = imageFiles.map((file, idx) => {
       return (<TouchableOpacity key={idx}>
-        <View style={styles.image_view}>
+        <View style={styles.imageHolder}>
           <Viewport image={<Image source={file} resizeMode={Image.resizeMode.contain} style={styles.image}/>} />
         </View>
       </TouchableOpacity>);
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     width: 90,
     height: 90,
   },
-  image_view: {
+  imageHolder: {
     backgroundColor: '#FBF9E9',
     borderRadius: 10,
     width: 100,
