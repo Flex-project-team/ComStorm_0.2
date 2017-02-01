@@ -1,7 +1,7 @@
 import { StyleSheet, View, Text, PanResponder, Animated, Dimensions } from 'react-native';
 import React, { Component } from 'react';
 
-export default class Viewport extends Component {
+export default class Viewport extends React.Component {
   constructor(props){
     super(props);
 
@@ -15,7 +15,7 @@ export default class Viewport extends Component {
             dx : this.state.pan.x,
             dy : this.state.pan.y
         }]),
-        onPanResponderRelease        : (e, gesture) => {} //Step 4
+        onPanResponderRelease        : (e, gesture) => {}
     });
   }
 
@@ -33,9 +33,8 @@ export default class Viewport extends Component {
   render(){
     return (
         <View style={styles.mainContainer}>
-            <View style={styles.dropZone}>
-                <Text style={styles.text}>Drop me here!</Text>
-            </View>
+                {// <Text style={styles.text}>Drop me here!</Text>
+              }
 
             {this.renderDraggable()}
         </View>
@@ -49,10 +48,6 @@ let Window = Dimensions.get('window');
 let styles = StyleSheet.create({
     mainContainer: {
         flex    : 1
-    },
-    dropZone    : {
-        height         : 100,
-        backgroundColor:'#2c3e50'
     },
     text        : {
         marginTop   : 25,
