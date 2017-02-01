@@ -8,94 +8,36 @@ export default class Slider extends Component {
 
   // TODO: DRY up the following code
   render() {
+    let imageFiles = [
+      require(`../../images/calling.png`),
+      require(`../../images/cry.png`),
+      require(`../../images/handstand.png`),
+      require(`../../images/question.png`),
+      require(`../../images/slide.png`),
+      require(`../../images/fight.png`),
+      require(`../../images/flower.png`),
+      require(`../../images/gymnastics.png`),
+      require(`../../images/happy.png`),
+      require(`../../images/man.png`),
+      require(`../../images/potato.png`),
+      require(`../../images/speech-down.png`),
+      require(`../../images/speech-left.png`),
+      require(`../../images/speech-right.png`),
+      require(`../../images/thought-left.png`),
+      require(`../../images/thought-right.png`)
+    ];
+    let imageViews = imageFiles.map((file, idx) => {
+      return <TouchableOpacity key={idx}>
+        <View style={styles.image_view}>
+          <Image source={file} resizeMode={Image.resizeMode.contain} style={styles.image}/>
+        </View>
+      </TouchableOpacity>;
+    });
+
     return (
       <View style={styles.view}>
         <ScrollView horizontal={true} style={styles.scrollview}>
-          <TouchableOpacity>
-            <View style={styles.image_view}>
-              <Image source={require('../../images/calling.png')} resizeMode={Image.resizeMode.contain} style={styles.image}/>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <View style={styles.image_view}>
-              <Image source={require('../../images/cry.png')} resizeMode={Image.resizeMode.contain} style={styles.image} />
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <View style={styles.image_view}>
-              <Image source={require('../../images/handstand.png')} resizeMode={Image.resizeMode.contain} style={styles.image} />
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <View style={styles.image_view}>
-              <Image source={require('../../images/question.png')} resizeMode={Image.resizeMode.contain} style={styles.image} />
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <View style={styles.image_view}>
-              <Image source={require('../../images/slide.png')} resizeMode={Image.resizeMode.contain} style={styles.image} />
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <View style={styles.image_view}>
-              <Image source={require('../../images/drink.png')} resizeMode={Image.resizeMode.contain} style={styles.image}/>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <View style={styles.image_view}>
-              <Image source={require('../../images/fight.png')} resizeMode={Image.resizeMode.contain} style={styles.image} />
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <View style={styles.image_view}>
-              <Image source={require('../../images/flower.png')} resizeMode={Image.resizeMode.contain} style={styles.image} />
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <View style={styles.image_view}>
-              <Image source={require('../../images/gymnastics.png')} resizeMode={Image.resizeMode.contain} style={styles.image} />
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <View style={styles.image_view}>
-              <Image source={require('../../images/happy.png')} resizeMode={Image.resizeMode.contain} style={styles.image} />
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <View style={styles.image_view}>
-              <Image source={require('../../images/man.png')} resizeMode={Image.resizeMode.contain} style={styles.image} />
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <View style={styles.image_view}>
-              <Image source={require('../../images/potato.png')} resizeMode={Image.resizeMode.contain} style={styles.image} />
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <View style={styles.image_view}>
-              <Image source={require('../../images/speech-down.png')} resizeMode={Image.resizeMode.contain} style={styles.image} />
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <View style={styles.image_view}>
-              <Image source={require('../../images/speech-left.png')} resizeMode={Image.resizeMode.contain} style={styles.image} />
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <View style={styles.image_view}>
-              <Image source={require('../../images/speech-right.png')} resizeMode={Image.resizeMode.contain} style={styles.image} />
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <View style={styles.image_view}>
-              <Image source={require('../../images/thought-left.png')} resizeMode={Image.resizeMode.contain} style={styles.image} />
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <View style={styles.image_view}>
-              <Image source={require('../../images/thought-right.png')} resizeMode={Image.resizeMode.contain} style={styles.image} />
-            </View>
-          </TouchableOpacity>
+          {imageViews}
         </ScrollView>
      </View>
     );
@@ -108,7 +50,7 @@ const styles = StyleSheet.create({
     height: 90,
   },
   image_view: {
-    backgroundColor: 'aliceblue',
+    backgroundColor: '#FBF9E9',
     borderRadius: 10,
     margin: 5
   },
