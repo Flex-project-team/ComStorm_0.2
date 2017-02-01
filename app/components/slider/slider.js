@@ -9,8 +9,8 @@ export default class Slider extends Component {
 
   render() {
     return (
-      <View>
-        <Viewport image={<Image source={require('../../images/calling.png')}/>}/>
+      <ScrollView horizontal={true} >
+        <Viewport image={<Image source={require('../../images/calling.png')}/>} style={{width: 40, height: 90, marginRight: 20}}/>
         <Image source={require('../../images/cry.png')} style={{width: 40, height: 90, marginRight: 20}} />
         <Image source={require('../../images/handstand.png')} style={{width: 40, height: 90, marginRight: 20}} />
         <Image source={require('../../images/question.png')} style={{width: 40, height: 90, marginRight: 20}} />
@@ -22,7 +22,7 @@ export default class Slider extends Component {
         <Image source={require('../../images/potato.png')} style={{width: 40, height: 90, marginRight: 20}} />
         <Image source={require('../../images/walking.png')} style={{width: 40, height: 90, marginRight: 20}} />
         <Image source={require('../../images/gymnastics.png')} style={{width: 40, height: 90, marginRight: 20}} />
-      </View>
+      </ScrollView>
     );
   }
 }
