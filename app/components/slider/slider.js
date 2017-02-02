@@ -6,6 +6,11 @@ import DrawingBox from '../drawing_box/drawing_box';
 export default class Slider extends Component {
   constructor(props) {
     super(props);
+    this.clickedItems = [];
+  }
+
+  handleClick(info) {
+
   }
 
   // TODO: DRY up the following code
@@ -28,14 +33,14 @@ export default class Slider extends Component {
       require(`../../images/thought-left.png`),
       require(`../../images/thought-right.png`)
     ];
-    let imageViews = imageFiles.map((file, idx) => {
+    this.imageViews = imageFiles.map((file, idx) => {
       return (
-        <View key={idx} style={styles.image_view}>
+        <View key={idx} style={styles.image_view} >
         <Image source={file} resizeMode={Image.resizeMode.contain} style={styles.image}/>
         </View>
       )
     });
-    let draggableImages = imageFiles.map((file, idx) => {
+    this.draggableImages = imageFiles.map((file, idx) => {
       return (
           <Viewport key={idx} image={<Image source={file} resizeMode={Image.resizeMode.contain} style={styles.image}/>} />
       );
@@ -45,11 +50,11 @@ export default class Slider extends Component {
       <View>
       <View style={styles.viewer}>
         <ScrollView horizontal={true} style={styles.scrollview}>
-        {imageViews}
+        {this.imageViews}
         </ScrollView>
       </View>
       <View style={styles.view}>
-        <DrawingBox images={draggableImages}/>
+        <DrawingBox images={this.draggableImages}/>
         </View>
       </View>
     );
