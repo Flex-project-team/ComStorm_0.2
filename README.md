@@ -1,96 +1,39 @@
-## ComStorm
+# ComStorm
 
-### Background
+## Background
 
-Com Storm is a mobile app for making comics, built using React Native. This app is intended to improve the poor quality of content in newspaper comics after the retirement of Bill Watterson. With how easy it is to get carpal tunnel syndrome, this app might end up saving lives :). 
+ComStorm is a mobile app for creating comic panels, built using React Native, for Android platform. This app is intended to improve the poor quality of content in newspaper comics after the retirement of Bill Watterson. With how easy it is to get carpal tunnel syndrome, this app might end up saving lives :).
 
-### Functionality and MVP
+## Features and Implementation
 
-Users will be able to
+### Click and Drag Images
 
-- [ ] choose number of panels (from one to three)
-- [ ] drag and drop templates on to the canvas
-- [ ] add text to speech and thought bubbles
-- [ ] save the created comic strip to their local storage
+![drawing_box1](docs/screenshots/)
 
+### Add Text Input in Speech and Thought Bubbles
 
-### Wireframes
+![drawing_box2](docs/screenshots/)
 
-1. <br />![wireframes](docs/wireframes/splash_page.png) <br />
-<br /> 2. <br /> ![wireframes](docs/wireframes/form1.png) <br />
-<br />3. <br /> ![wireframes](docs/wireframes/form2.png)
+### Save Comics to Phone Gallery
 
-### Technologies and Technical Challenges
+![gallery](docs/screeshots/)
 
-This app will be built using React Native and vanilla JavaScript. React Native will also be used for the styling.
+Upon clicking the `Save to Gallery` button, the app takes a screenshot of the comic panel and saves it to the phone's gallery.
 
-The technical challenges of this project will be:
+## Future Directions for the Project
 
-- Determining the implementation of drag and drop for figures and bubbles on to the canvas.
-- Determining the implementation of slider listing figures and bubbles.
-- Identifying ways to incorporate text input inside speech and thought bubbles.
-- Storing a user's creations in internal storage. 
+### Upload Images
 
-### Group Members and Work Breakdown
+Users will be allowed to upload and use their own images in the comic panels.
 
-Our group has three members, Nate Reiners, Ken Lee and Nandini Adhyapaka.
+### Authentication
 
-Nate's primary responsibilities will be:
+Users can create accounts with ComStorm and keep a record of all comics they created.
 
-- Text Input
-- Local Storage
+### Backgrounds
 
-Ken's primary responsibilities will be:
+Custom backgrounds can be applied to comic panels.
 
-- Drag and Drop 
-- Canvas equivalent in React Native or grid layout depending 
+### IOS Support
 
-Nandini's primary responsibilities will be:
-
-- Sliders
-- Styling 
-
-### Implementation Timeline
-
-**Day 1**:
-
-- Build basic file structure and skeleton
-- Install necessary dependencies and setup testing environment
-- Design Logo 
-
-**Day 2**:
-
-- Basic GUI setup and minimal functionality beginning 
-- Design out local storage implementation
-- Make progress on Drag and Drop 
-- Implement Sliders
-
-**Day 3**:
-
-- Finish anything leftover from Day 2 
-- Text Input 
-- Canvas Equivalent in React Native
-- Local Storage 
-
-**Day 4**:
-
-- Finish anything leftover from Day 3
-- Styling first draft 
-- Bugfixing
-
-**Day 5**:
-
-- Polish Style
-- Finish App and all bugfixes 
-
-### Plan for getting users and reviews
-
-- Spread the app on LinkedIn and Facebook/Twitter.
-- Have it featured in an article on Wall Street Journal, Wired, Tech Crunch, or Reddit.
-
-### Bonus Features
-
-- Allow users to upload their own images
-- User authentication
-- Custom backgrounds and colors 
-- Cross platform support to Android
+The current implementation of ComStorm is only available to Android users. It will also be available to IOS users.

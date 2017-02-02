@@ -52,7 +52,7 @@ export default class SaveButton extends Component {
     return (
       <TouchableOpacity style={styles.saveButton} onPress={this.save}>
         <Text style={styles.saveButtonText}>
-          Save as Image
+          Save to Gallery
         </Text>
       </TouchableOpacity>
     );
