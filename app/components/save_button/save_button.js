@@ -3,7 +3,7 @@ import { Button, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { takeSnapshot } from 'react-native-view-shot';
 
 // ES6 syntax threw an error
-const RNFS = require('react-native-fs');
+import RNFS from 'react-native-fs';
 
 export default class SaveButton extends Component {
   constructor(props) {
