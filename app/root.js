@@ -23,11 +23,13 @@ export default class Root extends Component {
     }
   }
 
+  // TODO: change initialRoute to MainScene after testing
+
   render() {
     return (
       <Navigator
         style={{ flex:1 }}
-        initialRoute={{ name: 'ComicScene' }}
+        initialRoute={{ name: 'MainScene' }}
         renderScene={ this.renderScene } />
     );
   }

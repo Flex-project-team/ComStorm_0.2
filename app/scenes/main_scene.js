@@ -6,6 +6,7 @@ import {
   Text,
   StyleSheet,
   Button,
+  TouchableOpacity
 } from 'react-native';
 
 export default class MainScene extends Component {
@@ -30,12 +31,11 @@ export default class MainScene extends Component {
           <View style={styles.imageContainer}>
             <Image source={require('../images/gimme-a-break.png')} style={styles.example}/>
           </View>
-          <Button
-            style={styles.button}
-            onPress={this.createComicScreen.bind(this)}
-            color='#FACC11'
-            title="Create Comic"
-            accessibilityLabel="Learn more about this purple button" />
+          <TouchableOpacity style={styles.button} onPress={this.createComicScreen.bind(this)}>
+            <Text style={styles.buttonText}>
+              Create New Comic
+            </Text>
+          </TouchableOpacity>
         </View>
       </View>
     );
@@ -71,6 +71,12 @@ const styles = StyleSheet.create({
     height: 160,
   },
   button: {
-    // marginTop: 25
+    marginTop: 25,
+    backgroundColor: '#FACC11',
+    padding: 13,
+    borderRadius: 4
+  },
+  buttonText: {
+    fontFamily: 'coming_soon'
   }
 });

@@ -32,7 +32,7 @@ export default class Viewport extends React.Component {
         <View>
             <Animated.View
                 {...this.panResponder.panHandlers}
-                style={[this.state.pan.getLayout(), {width: 40, height: 90, marginRight: 20}]}>
+                style={[this.state.pan.getLayout(), {width: 40, height: 90, marginRight: 20 }]}>
                   {this.props.image}
             </Animated.View>
         </View>
@@ -45,8 +45,6 @@ export default class Viewport extends React.Component {
         </View>
     );
   }
-
-
 
 
 }
