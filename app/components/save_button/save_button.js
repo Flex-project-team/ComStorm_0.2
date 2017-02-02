@@ -40,12 +40,8 @@ export default class SaveButton extends Component {
       .then(() => console.log("Copied File"))
       .catch((err) => console.log("Copy Error = ", err));
     RNFetchBlob.fs.scanFile([ { path: destFileLocation, mime: "image/jpeg" } ])
-      .then(() => {
-        console.log("scan file success");
-      })
-      .catch((err) => {
-        console.log("scan file error");
-      });
+      .then(() => console.log("Scanned image file successfully"))
+      .catch((err) => console.log("Unable to scan image file"));
   }
 
   render() {
