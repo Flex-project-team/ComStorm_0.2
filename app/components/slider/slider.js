@@ -62,7 +62,11 @@ export default class Slider extends Component {
       );
     });
 
-    let txtBubble = <Viewport key={999} image={<TextBubble />} />;
+  let draggableTextBubbles = bubbleImageViews.map((file, idx) => {
+    return (
+        <Viewport key={idx} image={<TextBubble img={bubbleImages[idx]} />} />
+    );
+  });
 
 
 
@@ -88,7 +92,7 @@ export default class Slider extends Component {
 
       </TouchableOpacity>
       <View collapsable={false} ref="mainView" style={styles.view}>
-        <DrawingBox images={draggableImages} indices={this.clickedItems}/>
+        <DrawingBox images={draggableImages.concat(draggableTextBubbles)} indices={this.clickedItems}/>
       </View>
         <SaveButton slider={this} navigator={this.props.navigator}/>
       </View>
