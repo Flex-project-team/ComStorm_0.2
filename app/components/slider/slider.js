@@ -46,10 +46,10 @@ export default class Slider extends Component {
     ];
     let imageViews = imageFiles.map((file, idx) => {
     return (
-      <TouchableOpacity onPress={()=>this.handleClick(idx)}>
-      <View key={idx} style={styles.image_view}>
-        <Image source={file} resizeMode={Image.resizeMode.contain} style={styles.image}/>
-      </View>
+      <TouchableOpacity key={idx} onPress={()=>this.handleClick(idx)}>
+        <View style={styles.image_view}>
+          <Image source={file} resizeMode={Image.resizeMode.contain} style={styles.image}/>
+        </View>
       </TouchableOpacity>
     );
   });
@@ -57,10 +57,10 @@ export default class Slider extends Component {
     let bubbleImageViews = bubbleImages.map((file, idx) => {
       return (
 
-        <TouchableOpacity onPress={()=>this.handleClick(idx+imageFiles.length)}>
-        <View key={idx + imageFiles.length} style={styles.image_view}>
-          <Image source={file} resizeMode={Image.resizeMode.contain} style={styles.image}/>
-        </View>
+        <TouchableOpacity key={idx + imageFiles.length} onPress={()=>this.handleClick(idx+imageFiles.length)}>
+          <View style={styles.image_view}>
+            <Image source={file} resizeMode={Image.resizeMode.contain} style={styles.image}/>
+          </View>
         </TouchableOpacity>
       );
     });
