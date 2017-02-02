@@ -44,8 +44,10 @@ const styles = StyleSheet.create({
   view: {
     height: 100,
     margin: 10,
-    position: "absolute",
-    top: 0
+    position: "relative",
+    // top: 0,
+    flexDirection: 'row',
+    flexWrap: 'wrap'
   },
   scrollview: {
     backgroundColor: '#FBF081'

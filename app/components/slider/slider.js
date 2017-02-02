@@ -72,7 +72,7 @@ export default class Slider extends Component {
 
     this.draggableImages = imageFiles.map((file, idx) => {
       return (
-          <Viewport key={idx} image={<Image source={file} resizeMode={Image.resizeMode.contain} style={styles.image}/>} />
+          <Viewport key={idx} image={<Image source={file} resizeMode={Image.resizeMode.contain} style={styles.imagedrag}/>} />
       );
     });
     this.draggableImages.unshift(txtBubble);
@@ -92,7 +92,7 @@ export default class Slider extends Component {
 
       </TouchableOpacity>
       <View collapsable={false} ref="mainView" style={styles.view}>
-        <DrawingBox images={this.draggableImages} indices={this.clickedItems} styles = {styles.drawbox}/>
+        <DrawingBox images={this.draggableImages} indices={this.clickedItems}/>
       </View>
         <SaveButton slider={this} navigator={this.props.navigator}/>
       </View>
@@ -107,7 +107,13 @@ const styles = StyleSheet.create({
   },
   image: {
     width: 90,
+    height: 90
+  },
+  imagedrag: {
+    width: 90,
     height: 90,
+    position: 'absolute',
+    top: 0
   },
   image_view: {
     backgroundColor: '#FBF9E9',
@@ -137,7 +143,7 @@ const styles = StyleSheet.create({
   backToHomeText: {
     textDecorationLine: 'underline',
     fontFamily: 'coming_soon'
-  }
+  },
   drawbox: {
     position: 'relative'
   }
