@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Viewport from '../drag_and_drop/viewport';
-import { View, ScrollView, ListView, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, ScrollView, ListView, Image, StyleSheet, TouchableOpacity, Text } from 'react-native';
 import DrawingBox from '../drawing_box/drawing_box';
 import TextBubble from '../text_input/text_bubble';
 import SaveButton from '../save_button/save_button.js';
@@ -8,6 +8,10 @@ import SaveButton from '../save_button/save_button.js';
 export default class Slider extends Component {
   constructor(props) {
     super(props);
+  }
+
+  navigateHome() {
+    this.props.navigator.push({ name: "MainScene"});
   }
 
   render() {
@@ -66,10 +70,15 @@ export default class Slider extends Component {
             {imageViews.concat(bubbleImageViews)}
           </ScrollView>
         </View>
+        <TouchableOpacity style={styles.backToHome} onPress={this.navigateHome.bind(this)}>
+          <Text style={styles.backToHomeText}>
+            Back To Home
+          </Text>
+        </TouchableOpacity>
         <View collapsable={false} ref="mainView" style={styles.view}>
           <DrawingBox images={draggableImages}/>
         </View>
-        <SaveButton slider={this} />
+        <SaveButton slider={this} navigator={this.props.navigator}/>
       </View>
     );
   }
@@ -104,5 +113,13 @@ const styles = StyleSheet.create({
   viewer: {
     height: 100,
     margin: 10
+  },
+  backToHome: {
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  backToHomeText: {
+    textDecorationLine: 'underline',
+    fontFamily: 'coming_soon'
   }
 });
