@@ -3,6 +3,7 @@ import Viewport from '../drag_and_drop/viewport';
 import { View, ScrollView, ListView, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import DrawingBox from '../drawing_box/drawing_box';
 import TextBubble from '../text_input/text_bubble';
+import SaveButton from '../save_button/save_button.js';
 
 export default class Slider extends Component {
   constructor(props) {
@@ -65,9 +66,10 @@ export default class Slider extends Component {
             {imageViews.concat(bubbleImageViews)}
           </ScrollView>
         </View>
-        <View style={styles.view}>
+        <View collapsable={false} ref="mainView" style={styles.view}>
           <DrawingBox images={draggableImages}/>
         </View>
+        <SaveButton slider={this} />
       </View>
     );
   }
