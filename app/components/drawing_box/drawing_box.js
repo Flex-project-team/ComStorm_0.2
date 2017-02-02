@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, ScrollView, ListView, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, ScrollView, ListView, Image, StyleSheet, TouchableOpacity, Text } from 'react-native';
 
 export default class DrawingBox extends Component {
   constructor(props) {
@@ -16,16 +16,23 @@ export default class DrawingBox extends Component {
     console.log(this.indices);
     let images = [...this.props.images];
     let rendered_objects = null;
+    //If there are images to render in the box
     if (this.indices) {
-      rendered_objects = this.indices.map((idx)=> images[idx])
-    }
-    return (
-      <View style={styles.view}>
+      rendered_objects = this.indices.map((idx, key) => (<View key={key}>{images[idx]}</View>))
+      return (
+        <View style={styles.view}>
         {rendered_objects}
-        { //images
-        }
-     </View>
-    );
+        </View>
+      );
+    }
+    //This is the view when the box is empty
+    else {
+      return (
+        <View style={styles.view}>
+          <Text>Tap items on the slider to place them in this box and drag word clouds by the tail</Text>
+        </View>
+      )
+    }
   }
 }
 
