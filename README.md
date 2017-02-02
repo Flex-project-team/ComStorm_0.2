@@ -24,6 +24,36 @@ Upon clicking the `Save to Gallery` button, the app takes a screenshot of the co
 - `react-native-fs`: To save the image to local storage
 - `react-native-fetch-blob`: To transfer the image file to the phone's gallery
 
+```javascript
+  class SaveButton extends Component {
+
+    save() {
+      takeSnapshot( this.slider.refs["mainView"], {
+        format: "jpeg",
+        quality: 0.8
+      })
+      .then((uri) => this.copyImage(uri));
+    }
+
+    copyImage(uri) {
+      let timestamp = Date.now();
+      let fileName = "comic_" + timestamp + ".jpeg";
+      let destFileLocation = RNFS.PicturesDirectoryPath + '/' + fileName;
+      let localFilePath = uri.replace(/file:\/\//, "");
+      console.log("destFileLocation = ", destFileLocation, "localFilePath = ", localFilePath);
+      RNFS.copyFile(localFilePath, destFileLocation)
+        .then(() => console.log("Copied File"));
+      RNFetchBlob.fs.scanFile([ { path: destFileLocation, mime: "image/jpeg" } ])
+        .then(() => {
+          console.log("scan file success");
+        })
+        .catch((err) => {
+          console.log("scan file error");
+        });
+    }
+  }
+```
+
 ## Future Directions for the Project
 
 ### Upload Images
