@@ -8,17 +8,21 @@ ComStorm is a mobile app for creating comic panels, built using React Native, fo
 
 ### Click and Drag Images
 
-![drawing_box1](docs/screenshots/)
+![drawing_box1](docs/screenshots/clickndrag.png)
 
 ### Add Text Input in Speech and Thought Bubbles
 
-![drawing_box2](docs/screenshots/)
+![drawing_box2](docs/screenshots/text_input.png)
 
 ### Save Comics to Phone Gallery
 
-![gallery](docs/screeshots/)
+![gallery](docs/screeshots/gallery.png)
 
-Upon clicking the `Save to Gallery` button, the app takes a screenshot of the comic panel and saves it to the phone's gallery.
+Upon clicking the `Save to Gallery` button, the app takes a screenshot of the comic panel and saves it to the phone's gallery. This feature was implemented using the following libraries:
+
+- `react-naive-view-shot`: To take a screenshot of the panel
+- `react-native-fs`: To save the image to local storage
+- `react-native-fetch-blob`: To transfer the image file to the phone's gallery
 
 ## Future Directions for the Project
 
