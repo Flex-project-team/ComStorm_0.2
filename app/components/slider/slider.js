@@ -10,16 +10,12 @@ export default class Slider extends Component {
     super(props);
     this.state = {clickedItems: []}
     this.clickedItems = [];
-    this.imageViews = [];
-    this.bubbleImageViews = [];
-    console.log("mde");
   }
 
   handleClick(index) {
     this.clickedItems.push(index);
     let clickedItems = this.clickedItems;
     this.setState({clickedItems: clickedItems});
-    console.log(this.state);
   }
 
   navigateHome() {
@@ -48,7 +44,7 @@ export default class Slider extends Component {
       require(`../../images/thought-left.png`),
       require(`../../images/thought-right.png`)
     ];
-  this.imageViews = imageFiles.map((file, idx) => {
+    let imageViews = imageFiles.map((file, idx) => {
     return (
       <TouchableOpacity onPress={()=>this.handleClick(idx)}>
       <View key={idx} style={styles.image_view}>
@@ -58,7 +54,7 @@ export default class Slider extends Component {
     );
   });
 
-  this.bubbleImageViews = bubbleImages.map((file, idx) => {
+    let bubbleImageViews = bubbleImages.map((file, idx) => {
       return (
         <View key={idx + imageFiles.length} style={styles.image_view} onClick={()=>handleClick(idx+imageFiles.length)}>
           <Image source={file} resizeMode={Image.resizeMode.contain} style={styles.image}/>
@@ -70,18 +66,18 @@ export default class Slider extends Component {
 
 
 
-    this.draggableImages = imageFiles.map((file, idx) => {
+    let draggableImages = imageFiles.map((file, idx) => {
       return (
           <Viewport key={idx} image={<Image source={file} resizeMode={Image.resizeMode.contain} style={styles.imagedrag}/>} />
       );
     });
-    this.draggableImages.unshift(txtBubble);
+    draggableImages.unshift(txtBubble);
 
     return (
       <View style={styles.mainView}>
       <View style={styles.viewer}>
         <ScrollView horizontal={true} style={styles.scrollview}>
-        {this.imageViews.concat(this.bubbleImageViews)}
+        {imageViews.concat(bubbleImageViews)}
         </ScrollView>
       </View>
 
@@ -92,7 +88,7 @@ export default class Slider extends Component {
 
       </TouchableOpacity>
       <View collapsable={false} ref="mainView" style={styles.view}>
-        <DrawingBox images={this.draggableImages} indices={this.clickedItems}/>
+        <DrawingBox images={draggableImages} indices={this.clickedItems}/>
       </View>
         <SaveButton slider={this} navigator={this.props.navigator}/>
       </View>
