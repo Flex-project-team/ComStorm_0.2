@@ -40,16 +40,11 @@ Upon clicking the `Save to Gallery` button, the app takes a screenshot of the co
       let fileName = "comic_" + timestamp + ".jpeg";
       let destFileLocation = RNFS.PicturesDirectoryPath + '/' + fileName;
       let localFilePath = uri.replace(/file:\/\//, "");
-      console.log("destFileLocation = ", destFileLocation, "localFilePath = ", localFilePath);
       RNFS.copyFile(localFilePath, destFileLocation)
         .then(() => console.log("Copied File"));
       RNFetchBlob.fs.scanFile([ { path: destFileLocation, mime: "image/jpeg" } ])
-        .then(() => {
-          console.log("scan file success");
-        })
-        .catch((err) => {
-          console.log("scan file error");
-        });
+        .then(() => console.log("scan file success"));
+        .catch((err) => console.log("scan file error"));
     }
   }
 ```
