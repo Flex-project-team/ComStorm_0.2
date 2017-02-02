@@ -22,7 +22,7 @@ export default class ComicScene extends Component {
             <Image source={require('../images/logo.png')} style={{margin: 10 }}/>
           </View>
           <View style={styles.container}>
-          <Slider />
+            <Slider />
             <ViewPort />
           </View>
         </View>

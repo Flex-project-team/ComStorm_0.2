@@ -22,13 +22,24 @@ export default class Slider extends Component {
       require(`../../images/gymnastics.png`),
       require(`../../images/happy.png`),
       require(`../../images/man.png`),
-      require(`../../images/potato.png`),
+      require(`../../images/potato.png`)
+    ];
+
+    let bubbleImages = [
       require(`../../images/speech-down.png`),
       require(`../../images/speech-left.png`),
       require(`../../images/speech-right.png`),
       require(`../../images/thought-left.png`),
       require(`../../images/thought-right.png`)
     ];
+
+  let bubbleImageViews = bubbleImages.map((file, idx) => {
+      return (
+        <View key={idx + imageFiles.length} style={styles.image_view}>
+          <Image source={file} resizeMode={Image.resizeMode.contain} style={styles.image}/>
+        </View>
+      )
+    });
 
     let txtBubble = <Viewport key={999} image={<TextBubble />} />;
 
@@ -39,6 +50,8 @@ export default class Slider extends Component {
         </View>
       )
     });
+
+
     let draggableImages = imageFiles.map((file, idx) => {
       return (
           <Viewport key={idx} image={<Image source={file} resizeMode={Image.resizeMode.contain} style={styles.image}/>} />
@@ -50,7 +63,7 @@ export default class Slider extends Component {
       <View>
       <View style={styles.viewer}>
         <ScrollView horizontal={true} style={styles.scrollview}>
-        {imageViews}
+        {imageViews.concat(bubbleImageViews)}
         </ScrollView>
       </View>
       <View style={styles.view}>
