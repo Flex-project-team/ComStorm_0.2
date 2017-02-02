@@ -33,15 +33,16 @@ export default class TextBubble extends React.Component {
 
 var styles = StyleSheet.create({
   container: {
+    padding: 5,
     position: "relative",
     zIndex: 1,
     flex: 1,
+    justifyContent: "center",
     width: 110,
     height: 110,
     resizeMode: "stretch",
     backgroundColor:'transparent',
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "flex-start"
   },
     bgImageWrapper: {
         position: 'absolute',
@@ -52,7 +53,7 @@ var styles = StyleSheet.create({
       height: 90,
       textAlign: "center",
       position: "absolute",
-      bottom: 8,
+      bottom: 16,
       left: 6,
     },
     bgImage: {

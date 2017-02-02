@@ -115,7 +115,8 @@ const styles = StyleSheet.create({
     width: 90,
     height: 90,
     position: 'absolute',
-    top: 0
+    top: 10,
+    left: 10
   },
   image_view: {
     backgroundColor: '#FBF9E9',
