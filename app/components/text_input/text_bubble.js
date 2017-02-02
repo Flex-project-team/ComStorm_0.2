@@ -10,7 +10,7 @@ export default class TextBubble extends React.Component {
   }
   render() {
     return (
-        <Image source={require('../../images/speech-down.png')} style={styles.container}>
+        <Image source={this.props.img} style={styles.container}>
           <TextInput
             onSubmitEditing={(event) => Keyboard.dismiss()}
             adjustsFontSizeToFit={true}
