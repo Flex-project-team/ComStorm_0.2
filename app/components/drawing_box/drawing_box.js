@@ -6,7 +6,6 @@ export default class DrawingBox extends Component {
     super(props);
   }
 
-  // TODO: DRY up the following code
   render() {
     let images = [...this.props.images];
 

@@ -8,7 +8,6 @@ export default class Slider extends Component {
     super(props);
   }
 
-  // TODO: DRY up the following code
   render() {
     let imageFiles = [
       require(`../../images/calling.png`),
@@ -31,9 +30,9 @@ export default class Slider extends Component {
     let bimageViews = imageFiles.map((file, idx) => {
       return (
         <View key={idx} style={styles.image_view}>
-        <Image source={file} resizeMode={Image.resizeMode.contain} style={styles.image}/>
+          <Image source={file} resizeMode={Image.resizeMode.contain} style={styles.image}/>
         </View>
-      )
+      );
     });
     let imageViews = imageFiles.map((file, idx) => {
       return (
@@ -46,7 +45,7 @@ export default class Slider extends Component {
       <View style={styles.viewer}>
         <ScrollView horizontal={true} style={styles.scrollview}>
         {bimageViews}
-        </ScrollView>
+      </ScrollView>
       </View>
       <View style={styles.view}>
         <DrawingBox images={imageViews}/>

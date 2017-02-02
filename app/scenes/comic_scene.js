@@ -22,8 +22,11 @@ export default class ComicScene extends Component {
           <View style={styles.nav}>
             <Image source={require('../images/logo.png')} style={{margin: 10 }}/>
           </View>
+          <Text style={{fontFamily: 'sf_cartoonist_hand_bold_italic'}}>
+            testing
+          </Text>
           <View style={styles.container}>
-          <Slider />
+            <Slider />
             <TextBubble />
             <ViewPort />
           </View>
