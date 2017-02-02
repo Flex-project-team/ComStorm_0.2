@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Button, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { takeSnapshot } from 'react-native-view-shot';
+import RNFS from 'react-native-fs';
+import RNFetchBlob from 'react-native-fetch-blob';
 
 // ES6 syntax threw an error
-const RNFS = require('react-native-fs');
+// const RNFS = require('react-native-fs');
 
 export default class SaveButton extends Component {
   constructor(props) {
@@ -37,6 +39,13 @@ export default class SaveButton extends Component {
     RNFS.copyFile(localFilePath, destFileLocation)
       .then(() => console.log("Copied File"))
       .catch((err) => console.log("Copy Error = ", err));
+      RNFetchBlob.fs.scanFile([ { path: destFileLocation, mime: "image/jpeg" } ])
+        .then(() => {
+          console.log("scan file success");
+        })
+        .catch((err) => {
+          console.log("scan file error");
+        });
   }
 
   render() {

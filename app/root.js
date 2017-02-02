@@ -22,8 +22,6 @@ export default class Root extends Component {
     }
   }
 
-  // TODO: change initialRoute to MainScene after testing
-
   render() {
     return (
       <Navigator
