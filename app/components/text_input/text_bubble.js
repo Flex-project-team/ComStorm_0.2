@@ -15,7 +15,8 @@ export default class TextBubble extends React.Component {
             onSubmitEditing={(event) => Keyboard.dismiss()}
             adjustsFontSizeToFit={true}
             fontFamily='coming_soon'
-            fontSize={12}
+            fontSize={10}
+            lineHeight={11}
             multiline={true}
             editable = {true}
             maxLength = {50}
@@ -26,7 +27,7 @@ export default class TextBubble extends React.Component {
            />
          </Image>
     );
-  };
+  }
 }
 
 
