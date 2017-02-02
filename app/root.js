@@ -30,6 +30,7 @@ export default class Root extends Component {
         style={{ flex:1 }}
         initialRoute={{ name: 'MainScene' }}
         renderScene={ this.renderScene }
+        configureScene={() => Navigator.SceneConfigs.FadeAndroid}
       />
     );
   }
