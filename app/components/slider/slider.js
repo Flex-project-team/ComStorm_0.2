@@ -59,17 +59,14 @@ export default class Slider extends Component {
     draggableImages.unshift(txtBubble);
 
     return (
-      <View>
-      <View style={styles.viewer}>
-        <ScrollView horizontal={true} style={styles.scrollview}>
-          {imageViews}
-        </ScrollView>
-        <ScrollView>
-          {imageViews.concat(bubbleImageViews)}
-        </ScrollView>
-      </View>
-      <View style={styles.view}>
-        <DrawingBox images={draggableImages}/>
+      <View style={styles.mainView}>
+        <View style={styles.viewer}>
+          <ScrollView horizontal={true} style={styles.scrollview}>
+            {imageViews.concat(bubbleImageViews)}
+          </ScrollView>
+        </View>
+        <View style={styles.view}>
+          <DrawingBox images={draggableImages}/>
         </View>
       </View>
     );
@@ -77,6 +74,10 @@ export default class Slider extends Component {
 }
 
 const styles = StyleSheet.create({
+  mainView: {
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
   image: {
     width: 90,
     height: 90,
@@ -87,10 +88,13 @@ const styles = StyleSheet.create({
     margin: 5
   },
   view: {
-    height: 325,
-    width: 392,
+    height: 300,
+    width: 325,
     margin: 10,
-    backgroundColor: '#EAEAE7'
+    backgroundColor: '#FBFBFA',
+    borderRadius: 6,
+    borderWidth: 0.5,
+    borderColor: 'black'
   },
   scrollview: {
     backgroundColor: '#FBF081'
