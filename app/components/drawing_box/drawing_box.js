@@ -4,14 +4,28 @@ import { View, ScrollView, ListView, Image, StyleSheet, TouchableOpacity } from 
 export default class DrawingBox extends Component {
   constructor(props) {
     super(props);
+    console.log(props);
+    this.state = {indices: []}
   }
 
-  render() {
-    let images = [...this.props.images];
+  componentWillReceiveProps(newProps) {
+   console.log(newProps);
+   this.indices = newProps.indices;
+  }
 
+
+  render() {
+    console.log(this.indices);
+    let images = [...this.props.images];
+    let rendered_objects = null;
+    if (this.indices) {
+      rendered_objects = this.indices.map((idx)=> images[idx])
+    }
     return (
       <View style={styles.view}>
-        {images}
+        {rendered_objects}
+        { //images
+        }
      </View>
     );
   }
@@ -29,7 +43,9 @@ const styles = StyleSheet.create({
   },
   view: {
     height: 100,
-    margin: 10
+    margin: 10,
+    position: "absolute",
+    top: 0
   },
   scrollview: {
     backgroundColor: '#FBF081'

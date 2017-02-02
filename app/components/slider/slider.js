@@ -8,14 +8,18 @@ import SaveButton from '../save_button/save_button.js';
 export default class Slider extends Component {
   constructor(props) {
     super(props);
+    this.state = {clickedItems: []}
     this.clickedItems = [];
     this.imageViews = [];
     this.bubbleImageViews = [];
+    console.log("mde");
   }
 
   handleClick(index) {
-    let allImages = this.imageViews.concat(this.bubbleImageViews);
-    <Viewport key={idx} image={<Image source={file} resizeMode={Image.resizeMode.contain} style={styles.image}/>} />
+    this.clickedItems.push(index);
+    let clickedItems = this.clickedItems;
+    this.setState({clickedItems: clickedItems});
+    console.log(this.state);
   }
 
   navigateHome() {
@@ -46,9 +50,11 @@ export default class Slider extends Component {
     ];
   this.imageViews = imageFiles.map((file, idx) => {
     return (
-      <View key={idx} style={styles.image_view} onClick={()=>handleClick(idx)}>
+      <TouchableOpacity onPress={()=>this.handleClick(idx)}>
+      <View key={idx} style={styles.image_view}>
         <Image source={file} resizeMode={Image.resizeMode.contain} style={styles.image}/>
       </View>
+      </TouchableOpacity>
     );
   });
 
@@ -86,7 +92,7 @@ export default class Slider extends Component {
 
       </TouchableOpacity>
       <View collapsable={false} ref="mainView" style={styles.view}>
-        <DrawingBox images={this.draggableImages}/>
+        <DrawingBox images={this.draggableImages} indices={this.clickedItems} styles = {styles.drawbox}/>
       </View>
         <SaveButton slider={this} navigator={this.props.navigator}/>
       </View>
@@ -131,5 +137,8 @@ const styles = StyleSheet.create({
   backToHomeText: {
     textDecorationLine: 'underline',
     fontFamily: 'coming_soon'
+  }
+  drawbox: {
+    position: 'relative'
   }
 });
