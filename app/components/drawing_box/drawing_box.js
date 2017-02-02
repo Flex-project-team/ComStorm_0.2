@@ -4,12 +4,10 @@ import { View, ScrollView, ListView, Image, StyleSheet, TouchableOpacity } from 
 export default class DrawingBox extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
     this.state = {indices: []}
   }
 
   componentWillReceiveProps(newProps) {
-   console.log(newProps);
    this.indices = newProps.indices;
   }
 
