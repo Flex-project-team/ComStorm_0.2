@@ -14,6 +14,7 @@ export default class TextBubble extends React.Component {
           <TextInput
             onSubmitEditing={(event) => Keyboard.dismiss()}
             adjustsFontSizeToFit={true}
+            fontFamily='coming_soon'
             fontSize={12}
             multiline={true}
             editable = {true}
