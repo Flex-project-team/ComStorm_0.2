@@ -56,9 +56,12 @@ export default class Slider extends Component {
 
     let bubbleImageViews = bubbleImages.map((file, idx) => {
       return (
-        <View key={idx + imageFiles.length} style={styles.image_view} onClick={()=>handleClick(idx+imageFiles.length)}>
+
+        <TouchableOpacity onPress={()=>this.handleClick(idx+imageFiles.length)}>
+        <View key={idx + imageFiles.length} style={styles.image_view}>
           <Image source={file} resizeMode={Image.resizeMode.contain} style={styles.image}/>
         </View>
+        </TouchableOpacity>
       );
     });
 
@@ -75,7 +78,6 @@ export default class Slider extends Component {
           <Viewport key={idx} image={<Image source={file} resizeMode={Image.resizeMode.contain} style={styles.imagedrag}/>} />
       );
     });
-    draggableImages.unshift(txtBubble);
 
     return (
       <View style={styles.mainView}>
