@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { Button, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { takeSnapshot } from 'react-native-view-shot';
+<<<<<<< HEAD
 
 // ES6 syntax threw an error
+=======
+>>>>>>> 0b01a8a84b1ff1b8d9331b252077abb4c3643268
 import RNFS from 'react-native-fs';
 
 export default class SaveButton extends Component {
