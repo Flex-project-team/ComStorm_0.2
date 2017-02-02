@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     height: 325,
     width: 392,
     margin: 10,
-    backgroundColor: 'blue'
+    backgroundColor: '#EAEAE7'
   },
   scrollview: {
     backgroundColor: '#FBF081'
