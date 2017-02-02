@@ -13,7 +13,6 @@ export default class Root extends Component {
     super(props);
   }
 
-
   renderScene(route, navigator) {
     if(route.name === 'MainScene') {
       return <MainScene navigator={navigator}/>;
@@ -30,7 +29,9 @@ export default class Root extends Component {
       <Navigator
         style={{ flex:1 }}
         initialRoute={{ name: 'MainScene' }}
-        renderScene={ this.renderScene } />
+        renderScene={ this.renderScene }
+        configureScene={() => Navigator.SceneConfigs.FadeAndroid}
+      />
     );
   }
 }

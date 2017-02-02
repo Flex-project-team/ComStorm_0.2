@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { takeSnapshot } from 'react-native-view-shot';
+import RNFS from 'react-native-fs';
 
 export default class SaveButton extends Component {
   constructor(props) {
@@ -16,13 +17,24 @@ export default class SaveButton extends Component {
 
     takeSnapshot( this.slider.refs["mainView"], {
       format: "jpeg",
-      quality: 0.8,
-      collapsable: false,
+      quality: 0.8
     })
-    .then(
-      uri => console.log("Image saved to", uri),
-      error => console.error("Oops, snapshot failed", error)
-    );
+    .then((uri) => {
+      this.copyImage(uri);
+      this.props.navigator.push({ name: "MainScene" });
+    }).catch((error) => console.error("Oops, snapshot failed", error));
+  }
+
+  copyImage(uri) {
+    console.log("Image saved to", uri);
+    let timestamp = Date.now();
+    let fileName = "comic_" + timestamp + ".jpeg";
+    let destFileLocation = RNFS.PicturesDirectoryPath + '/' + fileName;
+    let localFilePath = uri.replace(/file:\/\//, "");
+    console.log("destFileLocation = ", destFileLocation, "localFilePath = ", localFilePath);
+    RNFS.copyFile(localFilePath, destFileLocation)
+      .then(() => console.log("Copied File"))
+      .catch((err) => console.log("Copy Error = ", err));
   }
 
   render() {
@@ -39,7 +51,10 @@ export default class SaveButton extends Component {
 const styles = StyleSheet.create({
   saveButton: {
     backgroundColor: '#FACC11',
-    padding: 13,
+    paddingTop: 8,
+    paddingBottom: 8,
+    paddingRight: 13,
+    paddingLeft: 13,
     borderRadius: 4
   },
   saveButtonText: {
