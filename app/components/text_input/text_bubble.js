@@ -1,6 +1,7 @@
 import TextField from 'react-native-md-textinput';
 import React, {Component} from 'react';
 import {ScrollView, StyleSheet, TextInput, Image } from 'react-native';
+import {Keyboard} from 'react-native';
 
 export default class TextBubble extends React.Component {
   constructor(props) {
@@ -9,23 +10,24 @@ export default class TextBubble extends React.Component {
   }
   render() {
     return (
-      <ScrollView scrollable={false} style={{backgroundColor:'transparent'}}>
         <Image source={require('../../images/speech-down.png')} style={styles.container}>
           <TextInput
+            onSubmitEditing={(event) => Keyboard.dismiss()}
             adjustsFontSizeToFit={true}
-            fontSize={12}
+            fontFamily='coming_soon'
+            fontSize={10}
+            lineHeight={11}
             multiline={true}
             editable = {true}
-            maxLength = {60}
+            maxLength = {50}
             style={styles.txtInput}
             onChangeText={(text) => this.setState({text})}
             value={this.state.text}
             underlineColorAndroid='rgba(0,0,0,0)'
            />
          </Image>
-      </ScrollView>
     );
-  };
+  }
 }
 
 
@@ -46,11 +48,11 @@ var styles = StyleSheet.create({
         top: 0, bottom: 0, left: 0, right: 0
     },
     txtInput: {
-      width: 95,
-      height: 105,
+      width: 90,
+      height: 90,
       textAlign: "center",
       position: "absolute",
-      bottom: 18,
+      bottom: 8,
       left: 6,
     },
     bgImage: {
