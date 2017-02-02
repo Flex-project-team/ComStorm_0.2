@@ -81,21 +81,23 @@ export default class Slider extends Component {
 
     return (
       <View style={styles.mainView}>
-      <View style={styles.viewer}>
-        <ScrollView horizontal={true} style={styles.scrollview}>
-        {imageViews.concat(bubbleImageViews)}
-        </ScrollView>
-      </View>
+        
+        <View collapsable={false} ref="mainView" style={styles.view}>
+          <DrawingBox images={draggableImages.concat(draggableTextBubbles)} indices={this.clickedItems}/>
+        </View>
 
-      <TouchableOpacity style={styles.backToHome} onPress={this.navigateHome.bind(this)}>
-      <Text style={styles.backToHomeText}>
-      Back To Home
-      </Text>
+        <TouchableOpacity style={styles.backToHome} onPress={this.navigateHome.bind(this)}>
+          <Text style={styles.backToHomeText}>
+            Back To Home
+          </Text>
+        </TouchableOpacity>
 
-      </TouchableOpacity>
-      <View collapsable={false} ref="mainView" style={styles.view}>
-        <DrawingBox images={draggableImages.concat(draggableTextBubbles)} indices={this.clickedItems}/>
-      </View>
+        <View style={styles.viewer}>
+          <ScrollView horizontal={true} style={styles.scrollview}>
+            {imageViews.concat(bubbleImageViews)}
+          </ScrollView>
+        </View>
+
         <SaveButton slider={this} navigator={this.props.navigator}/>
       </View>
     );
