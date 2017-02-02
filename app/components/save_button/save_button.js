@@ -21,10 +21,10 @@ export default class SaveButton extends Component {
       format: "jpeg",
       quality: 0.8
     })
-    .then(
-      this.copyImage,
-      error => console.error("Oops, snapshot failed", error)
-    );
+    .then((uri) => {
+      this.copyImage(uri);
+      this.props.navigator.push({ name: "MainScene" });
+    }).catch((error) => console.error("Oops, snapshot failed", error));
   }
 
   copyImage(uri) {
@@ -53,7 +53,10 @@ export default class SaveButton extends Component {
 const styles = StyleSheet.create({
   saveButton: {
     backgroundColor: '#FACC11',
-    padding: 13,
+    paddingTop: 8,
+    paddingBottom: 8,
+    paddingRight: 13,
+    paddingLeft: 13,
     borderRadius: 4
   },
   saveButtonText: {
