@@ -45,7 +45,11 @@ export default class Slider extends Component {
       );
     });
 
-    let txtBubble = <Viewport key={999} image={<TextBubble />} />;
+  let draggableTextBubbles = bubbleImageViews.map((file, idx) => {
+    return (
+        <Viewport key={idx} image={<TextBubble img={bubbleImages[idx]} />} />
+    );
+  });
 
     let imageViews = imageFiles.map((file, idx) => {
       return (
@@ -61,7 +65,8 @@ export default class Slider extends Component {
           <Viewport key={idx} image={<Image source={file} resizeMode={Image.resizeMode.contain} style={styles.image}/>} />
       );
     });
-    draggableImages.unshift(txtBubble);
+
+    draggableImages.concat(draggableTextBubbles);
 
     return (
       <View style={styles.mainView}>
