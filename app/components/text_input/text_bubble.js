@@ -1,7 +1,13 @@
 import TextField from 'react-native-md-textinput';
 import React, {Component} from 'react';
-import {ScrollView, StyleSheet, TextInput, Image } from 'react-native';
-import {Keyboard} from 'react-native';
+import {
+  ScrollView,
+  StyleSheet,
+  TextInput,
+  Image,
+  TouchableWithoutFeedback,
+} from 'react-native';
+
 
 export default class TextBubble extends React.Component {
   constructor(props) {
@@ -33,10 +39,11 @@ export default class TextBubble extends React.Component {
       img = this.props.img;
       charLimit = 60;
     }
+
+
     return (
         <Image source={img} style={containerStyle}>
           <TextInput
-            onSubmitEditing={(event) => Keyboard.dismiss()}
             adjustsFontSizeToFit={true}
             fontFamily='coming_soon'
             fontSize={fSize}

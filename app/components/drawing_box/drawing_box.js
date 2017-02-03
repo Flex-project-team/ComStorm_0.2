@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { View, ScrollView, ListView, Image, StyleSheet, TouchableOpacity, Text } from 'react-native';
+import { View, ScrollView, ListView, Image, StyleSheet,
+  TouchableOpacity, Text, TouchableWithoutFeedback } from 'react-native';
+const dismissKeyboard = require('dismissKeyboard');
 
 export default class DrawingBox extends Component {
   constructor(props) {
@@ -20,9 +22,11 @@ export default class DrawingBox extends Component {
     if (this.indices && this.indices.length > 0) {
       rendered_objects = this.indices.map((idx, key) => (<View key={key}>{images[idx]}</View>));
       return (
-        <View style={styles.view}>
-          {rendered_objects}
-        </View>
+        <TouchableWithoutFeedback onPress={()=> dismissKeyboard()}>
+          <View style={styles.view}>
+            {rendered_objects}
+          </View>
+        </TouchableWithoutFeedback>
       );
     }
     //This is the view when the box is empty
@@ -47,8 +51,7 @@ const styles = StyleSheet.create({
     margin: 5
   },
   view: {
-    height: 100,
-    margin: 10,
+    height: 298,
     position: "relative",
     // top: 0,
     flexDirection: 'row',
