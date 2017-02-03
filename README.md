@@ -17,7 +17,7 @@ ComStorm is a mobile app for creating comic panels, built using React Native, fo
 There are three types of text input which can be added to the scene. Each gets wrapped in a draggable element (described above) upon being rendered in the drawing area. A onPress handler which calls dismissKeyboard was applied to a TouchableWithoutFeedback tag which wraps the drawing area to dismiss the keyboard upon pressing any empty space in the drawing area.
 
 ```javascript
-  <TouchableWithoutFeedback style={styles.dismiss} onPress={()=>     dismissKeyboard()}>
+  <TouchableWithoutFeedback style={styles.dismiss} onPress={() => dismissKeyboard()}>
     <View style={styles.view}>
       {rendered_objects}
     </View>
