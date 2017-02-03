@@ -20,9 +20,9 @@ export default class DrawingBox extends Component {
     let rendered_objects = null;
     //If there are images to render in the box
     if (this.indices && this.indices.length > 0) {
-      rendered_objects = this.indices.map((idx, key) => (<View key={key}>{images[idx]}</View>));
+      rendered_objects = this.indices.map((idx, key) => (<View key={key} style={styles.image}>{images[idx]}</View>))
       return (
-        <TouchableWithoutFeedback onPress={()=> dismissKeyboard()}>
+        <TouchableWithoutFeedback style={styles.dismiss} onPress={()=> dismissKeyboard()}>
           <View style={styles.view}>
             {rendered_objects}
           </View>
@@ -42,8 +42,9 @@ export default class DrawingBox extends Component {
 
 const styles = StyleSheet.create({
   image: {
-    width: 90,
-    height: 90,
+    position: "absolute",
+    top: 100,
+    left: 100
   },
   image_view: {
     backgroundColor: '#FBF9E9',
