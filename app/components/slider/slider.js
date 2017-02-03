@@ -147,8 +147,8 @@ const styles = StyleSheet.create({
     height: 90
   },
   imagedrag: {
-    width: 90,
-    height: 90,
+    width: 110,
+    height: 110,
     position: 'absolute',
     top: 10,
     left: 10
@@ -195,7 +195,6 @@ const styles = StyleSheet.create({
     // marginLeft: 20
   },
   clearComicText: {
-    textDecorationLine: 'underline',
     fontFamily: 'coming_soon',
     marginRight: 30,
     marginLeft: 30

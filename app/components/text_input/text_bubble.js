@@ -12,7 +12,7 @@ import {
 export default class TextBubble extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { text: '' };
+    this.state = { text: 'Enter text' };
   }
   render() {
     let fSize;
@@ -28,15 +28,15 @@ export default class TextBubble extends React.Component {
       fWeight = "bold";
       containerStyle = styles.capContainer;
       txtStyle = styles.txtCaptionInput;
-      lnHeight = 24;
-      charLimit = 60;
+      lnHeight = 18;
+      charLimit = 40;
       img = require('../../images/transparent.png');
     } else {
       fSize = 11;
-      fWeight = "bold";
+      fWeight = "bolder";
       containerStyle = styles.container;
       txtStyle = styles.txtBubbleInput;
-      lnHeight = 10;
+      lnHeight = 11;
       img = this.props.img;
       charLimit = 60;
     }
@@ -79,14 +79,15 @@ var styles = StyleSheet.create({
     justifyContent: "flex-start"
   },
   capContainer: {
+    borderBottomColor: "#DDDDDD",
     borderBottomWidth: 1,
     paddingRight: 20,
     paddingLeft: 20,
     paddingTop: 20,
     zIndex: 1,
-    width: 310,
+    width: 320,
     height: 70,
-    justifyContent: "center",
+    justifyContent: "flex-end",
     alignItems: "center",
     backgroundColor:'transparent'
   },
@@ -100,9 +101,10 @@ var styles = StyleSheet.create({
       left: 10,
     },
     txtCaptionInput: {
+      fontStyle: 'italic',
       zIndex: 4,
-      width: 280,
-      height: 70,
+      width: 240,
+      height: 60,
       textAlign: "center"
     }
 });
