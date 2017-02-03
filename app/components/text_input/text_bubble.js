@@ -9,18 +9,43 @@ export default class TextBubble extends React.Component {
     this.state = { text: '' };
   }
   render() {
+    let fSize;
+    let fWeight;
+    let containerStyle;
+    let txtStyle;
+    let lnHeight;
+    let img;
+    let charLimit;
+    if (this.props.img === require('../../images/caption.png')) {
+      fSize = 16;
+      fWeight = "bold";
+      containerStyle = styles.capContainer;
+      txtStyle = styles.txtCaptionInput;
+      lnHeight = 24;
+      charLimit = 30;
+      img = require('../../images/transparent.png');
+    } else {
+      fSize = 12;
+      fWeight = "bolder";
+      containerStyle = styles.container;
+      txtStyle = styles.txtBubbleInput;
+      lnHeight = 10;
+      img = this.props.img;
+      charLimit = 60;
+    }
     return (
-        <Image source={this.props.img} style={styles.container}>
+        <Image source={img} style={containerStyle}>
           <TextInput
             onSubmitEditing={(event) => Keyboard.dismiss()}
             adjustsFontSizeToFit={true}
             fontFamily='coming_soon'
-            fontSize={10}
-            lineHeight={11}
+            fontSize={fSize}
+            fontWeight={fWeight}
+            lineHeight={lnHeight}
             multiline={true}
             editable = {true}
-            maxLength = {50}
-            style={styles.txtInput}
+            maxLength = {charLimit}
+            style={txtStyle}
             onChangeText={(text) => this.setState({text})}
             value={this.state.text}
             underlineColorAndroid='rgba(0,0,0,0)'
@@ -33,37 +58,41 @@ export default class TextBubble extends React.Component {
 
 var styles = StyleSheet.create({
   container: {
+    padding: 5,
     position: "relative",
     zIndex: 1,
     flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
     width: 110,
     height: 110,
     resizeMode: "stretch",
     backgroundColor:'transparent',
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "flex-start"
   },
-    bgImageWrapper: {
-        position: 'absolute',
-        top: 0, bottom: 0, left: 0, right: 0
-    },
-    txtInput: {
+  capContainer: {
+    padding: 2,
+    borderColor: "#e2e2e2",
+    borderWidth: 1,
+    zIndex: 1,
+    width: 310,
+    height: 50,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor:'transparent',
+  },
+    txtBubbleInput: {
       width: 90,
-      height: 90,
+      height: 85,
       textAlign: "center",
       position: "absolute",
-      bottom: 8,
-      left: 6,
+      bottom: 14,
+      left: 10,
     },
-    bgImage: {
-        flex: 1,
-        resizeMode: "contain",
-        height: 20,
-        width: 20,
-    },
-    welcome: {
-        fontSize: 20,
-        textAlign: 'center',
-        margin: 10
+    txtCaptionInput: {
+      zIndex: 4,
+      width: 270,
+      height: 50,
+      textAlign: "center"
     }
 });

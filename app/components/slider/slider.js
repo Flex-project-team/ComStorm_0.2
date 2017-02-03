@@ -3,6 +3,7 @@ import Viewport from '../drag_and_drop/viewport';
 import { View, ScrollView, ListView, Image, StyleSheet, TouchableOpacity, Text } from 'react-native';
 import DrawingBox from '../drawing_box/drawing_box';
 import TextBubble from '../text_input/text_bubble';
+
 import SaveButton from '../save_button/save_button.js';
 
 export default class Slider extends Component {
@@ -51,8 +52,10 @@ export default class Slider extends Component {
       require(`../../images/speech-left.png`),
       require(`../../images/speech-right.png`),
       require(`../../images/thought-left.png`),
-      require(`../../images/thought-right.png`)
+      require(`../../images/thought-right.png`),
+      require('../../images/caption.png'),
     ];
+
     let imageViews = imageFiles.map((file, idx) => {
     return (
       <TouchableOpacity key={idx} onPress={()=>this.handleClick(idx)}>
@@ -139,7 +142,8 @@ const styles = StyleSheet.create({
     width: 90,
     height: 90,
     position: 'absolute',
-    top: 0
+    top: 10,
+    left: 10
   },
   image_view: {
     backgroundColor: '#FBF9E9',
