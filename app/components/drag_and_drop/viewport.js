@@ -49,7 +49,6 @@ export default class Viewport extends React.Component {
 
 }
 
-let CIRCLE_RADIUS = 36;
 let Window = Dimensions.get('window');
 let styles = StyleSheet.create({
     mainContainer: {
@@ -65,16 +64,5 @@ let styles = StyleSheet.create({
         marginRight : 5,
         textAlign   : 'center',
         color       : '#fff'
-    },
-    draggableContainer: {
-        position    : 'absolute',
-        top         : Window.height/2 - CIRCLE_RADIUS,
-        left        : Window.width/2 - CIRCLE_RADIUS,
-    },
-    circle      : {
-        backgroundColor     : '#1abc9c',
-        width               : CIRCLE_RADIUS*2,
-        height              : CIRCLE_RADIUS*2,
-        borderRadius        : CIRCLE_RADIUS
     }
 });
