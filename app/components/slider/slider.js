@@ -52,7 +52,6 @@ export default class Slider extends Component {
       require(`../../images/happy-pencil.png`),
       require(`../../images/happy-sun.png`),
       require(`../../images/snowman.png`),
-      require(`../../images/sunshine.gif`),
       require(`../../images/surprised-wolf.png`)
     ];
 
