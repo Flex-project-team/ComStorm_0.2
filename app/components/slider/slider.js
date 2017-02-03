@@ -15,12 +15,21 @@ export default class Slider extends Component {
 
   handleClick(index) {
     this.clickedItems.push(index);
-    let clickedItems = this.clickedItems;
-    this.setState({clickedItems: clickedItems});
+    this.setState({clickedItems: this.clickedItems});
   }
 
   navigateHome() {
     this.props.navigator.push({ name: "MainScene"});
+  }
+
+  clearPage() {
+    this.clickedItems = [];
+    this.setState({clickedItems: []});
+  }
+
+  undoItem() {
+    this.clickedItems.pop();
+    this.setState({clickedItems: this.clickedItems});
   }
 
   render() {
@@ -84,22 +93,37 @@ export default class Slider extends Component {
 
     return (
       <View style={styles.mainView}>
-      <View style={styles.viewer}>
-        <ScrollView horizontal={true} style={styles.scrollview}>
-        {imageViews.concat(bubbleImageViews)}
-        </ScrollView>
-      </View>
 
-      <TouchableOpacity style={styles.backToHome} onPress={this.navigateHome.bind(this)}>
-      <Text style={styles.backToHomeText}>
-      Back To Home
-      </Text>
+        <View collapsable={false} ref="mainView" style={styles.view}>
+          <DrawingBox images={draggableImages.concat(draggableTextBubbles)} indices={this.clickedItems}/>
+        </View>
 
-      </TouchableOpacity>
-      <View collapsable={false} ref="mainView" style={styles.view}>
-        <DrawingBox images={draggableImages.concat(draggableTextBubbles)} indices={this.clickedItems}/>
-      </View>
         <SaveButton slider={this} navigator={this.props.navigator}/>
+
+        <View style={styles.touchText}>
+          <TouchableOpacity style={styles.backToHome} onPress={this.navigateHome.bind(this)}>
+            <Text style={styles.backToHomeText}>
+              Back To Home
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.backToHome}>
+            <Text style={styles.backToHomeText} onPress={this.clearPage.bind(this)}>
+              Clear Comic
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.backToHome}>
+            <Text style={styles.backToHomeText} onPress={this.undoItem.bind(this)}>
+              Undo Last Item
+            </Text>
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.viewer}>
+          <ScrollView horizontal={true} style={styles.scrollview} >
+            {imageViews.concat(bubbleImageViews)}
+          </ScrollView>
+        </View>
+
       </View>
     );
   }
@@ -140,15 +164,27 @@ const styles = StyleSheet.create({
   },
   viewer: {
     height: 100,
-    margin: 10
+    margin: 5
+  },
+  touchText: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: 1,
+    marginBottom: 1
   },
   backToHome: {
-    justifyContent: 'center',
-    alignItems: 'center'
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: 1,
+    marginBottom: 1
   },
   backToHomeText: {
     textDecorationLine: 'underline',
-    fontFamily: 'coming_soon'
+    fontFamily: 'coming_soon',
+    marginRight: 20,
+    marginLeft: 20
   },
   drawbox: {
     position: 'relative'
