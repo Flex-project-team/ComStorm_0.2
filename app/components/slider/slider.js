@@ -9,7 +9,7 @@ import SaveButton from '../save_button/save_button.js';
 export default class Slider extends Component {
   constructor(props) {
     super(props);
-    this.state = {clickedItems: []}
+    this.state = {clickedItems: []};
     this.clickedItems = [];
   }
 
@@ -107,7 +107,7 @@ export default class Slider extends Component {
             </Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.backToHome}>
-            <Text style={styles.backToHomeText} onPress={this.clearPage.bind(this)}>
+            <Text style={styles.clearComicText} onPress={this.clearPage.bind(this)}>
               Clear Comic
             </Text>
           </TouchableOpacity>
@@ -183,8 +183,14 @@ const styles = StyleSheet.create({
   backToHomeText: {
     textDecorationLine: 'underline',
     fontFamily: 'coming_soon',
-    marginRight: 20,
-    marginLeft: 20
+    // marginRight: 20,
+    // marginLeft: 20
+  },
+  clearComicText: {
+    textDecorationLine: 'underline',
+    fontFamily: 'coming_soon',
+    marginRight: 30,
+    marginLeft: 30
   },
   drawbox: {
     position: 'relative'

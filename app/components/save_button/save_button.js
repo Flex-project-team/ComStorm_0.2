@@ -65,6 +65,6 @@ const styles = StyleSheet.create({
     borderRadius: 4
   },
   saveButtonText: {
-    fontFamily: 'coming_soon'
+    fontFamily: 'coming_soon',
   }
 });

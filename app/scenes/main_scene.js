@@ -77,6 +77,6 @@ const styles = StyleSheet.create({
     borderRadius: 4
   },
   buttonText: {
-    fontFamily: 'coming_soon'
+    fontFamily: 'coming_soon',
   }
 });
