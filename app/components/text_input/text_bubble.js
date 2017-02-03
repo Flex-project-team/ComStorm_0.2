@@ -22,17 +22,18 @@ export default class TextBubble extends React.Component {
     let lnHeight;
     let img;
     let charLimit;
+
     if (this.props.img === require('../../images/caption.png')) {
       fSize = 16;
       fWeight = "bold";
       containerStyle = styles.capContainer;
       txtStyle = styles.txtCaptionInput;
       lnHeight = 24;
-      charLimit = 30;
+      charLimit = 60;
       img = require('../../images/transparent.png');
     } else {
-      fSize = 12;
-      fWeight = "bolder";
+      fSize = 11;
+      fWeight = "bold";
       containerStyle = styles.container;
       txtStyle = styles.txtBubbleInput;
       lnHeight = 10;
@@ -78,28 +79,30 @@ var styles = StyleSheet.create({
     justifyContent: "flex-start"
   },
   capContainer: {
-    padding: 2,
-    borderColor: "#e2e2e2",
-    borderWidth: 1,
+    borderBottomWidth: 1,
+    paddingRight: 20,
+    paddingLeft: 20,
+    paddingTop: 20,
     zIndex: 1,
     width: 310,
-    height: 50,
+    height: 70,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor:'transparent',
+    backgroundColor:'transparent'
   },
     txtBubbleInput: {
       width: 90,
       height: 85,
+      justifyContent: "center",
       textAlign: "center",
       position: "absolute",
-      bottom: 14,
+      bottom: 12,
       left: 10,
     },
     txtCaptionInput: {
       zIndex: 4,
-      width: 270,
-      height: 50,
+      width: 280,
+      height: 70,
       textAlign: "center"
     }
 });
