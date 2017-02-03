@@ -13,7 +13,6 @@ export default class DrawingBox extends Component {
    this.indices = newProps.indices;
   }
 
-
   render() {
     console.log(this.indices);
     let images = [...this.props.images];

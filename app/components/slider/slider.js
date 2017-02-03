@@ -44,7 +44,16 @@ export default class Slider extends Component {
       require(`../../images/gymnastics.png`),
       require(`../../images/happy.png`),
       require(`../../images/man.png`),
-      require(`../../images/potato.png`)
+      require(`../../images/business-man.png`),
+      require(`../../images/confused-man.png`),
+      require(`../../images/doctor.png`),
+      require(`../../images/potato.png`),
+      require(`../../images/doctor.png`),
+      require(`../../images/happy-pencil.png`),
+      require(`../../images/happy-sun.png`),
+      require(`../../images/snowman.png`),
+      require(`../../images/sunshine.gif`),
+      require(`../../images/surprised-wolf.png`)
     ];
 
     let bubbleImages = [
