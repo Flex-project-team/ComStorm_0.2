@@ -39,20 +39,16 @@ export default class SaveButton extends Component {
     RNFS.copyFile(localFilePath, destFileLocation)
       .then(() => console.log("Copied File"))
       .catch((err) => console.log("Copy Error = ", err));
-      RNFetchBlob.fs.scanFile([ { path: destFileLocation, mime: "image/jpeg" } ])
-        .then(() => {
-          console.log("scan file success");
-        })
-        .catch((err) => {
-          console.log("scan file error");
-        });
+    RNFetchBlob.fs.scanFile([ { path: destFileLocation, mime: "image/jpeg" } ])
+      .then(() => console.log("Scanned image file successfully"))
+      .catch((err) => console.log("Unable to scan image file"));
   }
 
   render() {
     return (
       <TouchableOpacity style={styles.saveButton} onPress={this.save}>
         <Text style={styles.saveButtonText}>
-          Save as Image
+          Save to Gallery
         </Text>
       </TouchableOpacity>
     );

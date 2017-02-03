@@ -1,96 +1,68 @@
-## ComStorm
+# ComStorm
 
-### Background
+## Background
 
-Com Storm is a mobile app for making comics, built using React Native. This app is intended to improve the poor quality of content in newspaper comics after the retirement of Bill Watterson. With how easy it is to get carpal tunnel syndrome, this app might end up saving lives :). 
+ComStorm is a mobile app for creating comic panels, built using React Native, for Android platform. This app is intended to improve the poor quality of content in newspaper comics after the retirement of Bill Watterson. With how easy it is to get carpal tunnel syndrome, this app might end up saving lives :).
 
-### Functionality and MVP
+## Features and Implementation
 
-Users will be able to
+### Click and Drag Images
 
-- [ ] choose number of panels (from one to three)
-- [ ] drag and drop templates on to the canvas
-- [ ] add text to speech and thought bubbles
-- [ ] save the created comic strip to their local storage
+![drawing_box1](docs/screenshots/clickndrag.png)
 
+### Add Text Input in Speech and Thought Bubbles
 
-### Wireframes
+![drawing_box2](docs/screenshots/text_input.png)
 
-1. <br />![wireframes](docs/wireframes/splash_page.png) <br />
-<br /> 2. <br /> ![wireframes](docs/wireframes/form1.png) <br />
-<br />3. <br /> ![wireframes](docs/wireframes/form2.png)
+### Save Comics to Phone Gallery
 
-### Technologies and Technical Challenges
+![gallery](docs/screenshots/gallery.png)
 
-This app will be built using React Native and vanilla JavaScript. React Native will also be used for the styling.
+Upon clicking the `Save to Gallery` button, the app takes a screenshot of the comic panel and saves it to the phone's gallery. This feature was implemented using the following libraries:
 
-The technical challenges of this project will be:
+- `react-native-view-shot`: To take a screenshot of the panel
+- `react-native-fs`: To save the image to local storage
+- `react-native-fetch-blob`: To transfer the image file to the phone's gallery
 
-- Determining the implementation of drag and drop for figures and bubbles on to the canvas.
-- Determining the implementation of slider listing figures and bubbles.
-- Identifying ways to incorporate text input inside speech and thought bubbles.
-- Storing a user's creations in internal storage. 
+```javascript
+  class SaveButton extends Component {
 
-### Group Members and Work Breakdown
+    save() {
+      takeSnapshot( this.slider.refs["mainView"], {
+        format: "jpeg",
+        quality: 0.8
+      })
+      .then((uri) => this.copyImage(uri));
+    }
 
-Our group has three members, Nate Reiners, Ken Lee and Nandini Adhyapaka.
+    copyImage(uri) {
+      let timestamp = Date.now();
+      let fileName = "comic_" + timestamp + ".jpeg";
+      let destFileLocation = RNFS.PicturesDirectoryPath + '/' + fileName;
+      let localFilePath = uri.replace(/file:\/\//, "");
+      RNFS.copyFile(localFilePath, destFileLocation)
+        .then(() => console.log("Copied File"));
+      RNFetchBlob.fs.scanFile([ { path: destFileLocation, mime: "image/jpeg" } ])
+        .then(() => console.log("scan file success"));
+        .catch((err) => console.log("scan file error"));
+    }
+  }
+```
 
-Nate's primary responsibilities will be:
+## Future Directions for the Project
 
-- Text Input
-- Local Storage
+### Upload Images
 
-Ken's primary responsibilities will be:
+Users will be allowed to upload and use their own images in the comic panels.
 
-- Drag and Drop 
-- Canvas equivalent in React Native or grid layout depending 
+### Authentication
 
-Nandini's primary responsibilities will be:
+Users can create accounts with ComStorm and keep a record of all comics they created.
 
-- Sliders
-- Styling 
+### Backgrounds
 
-### Implementation Timeline
+Custom backgrounds can be applied to comic panels.
 
-**Day 1**:
+### IOS Support
 
-- Build basic file structure and skeleton
-- Install necessary dependencies and setup testing environment
-- Design Logo 
-
-**Day 2**:
-
-- Basic GUI setup and minimal functionality beginning 
-- Design out local storage implementation
-- Make progress on Drag and Drop 
-- Implement Sliders
-
-**Day 3**:
-
-- Finish anything leftover from Day 2 
-- Text Input 
-- Canvas Equivalent in React Native
-- Local Storage 
-
-**Day 4**:
-
-- Finish anything leftover from Day 3
-- Styling first draft 
-- Bugfixing
-
-**Day 5**:
-
-- Polish Style
-- Finish App and all bugfixes 
-
-### Plan for getting users and reviews
-
-- Spread the app on LinkedIn and Facebook/Twitter.
-- Have it featured in an article on Wall Street Journal, Wired, Tech Crunch, or Reddit.
-
-### Bonus Features
-
-- Allow users to upload their own images
-- User authentication
-- Custom backgrounds and colors 
-- Cross platform support to Android
+The current implementation of ComStorm is only available to Android users. It will also be available to IOS users.
