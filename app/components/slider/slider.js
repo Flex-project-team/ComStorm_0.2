@@ -191,13 +191,12 @@ const styles = StyleSheet.create({
   backToHomeText: {
     textDecorationLine: 'underline',
     fontFamily: 'coming_soon',
-    // marginRight: 20,
-    // marginLeft: 20
   },
   clearComicText: {
     fontFamily: 'coming_soon',
     marginRight: 30,
-    marginLeft: 30
+    marginLeft: 30,
+    textDecorationLine: 'underline'
   },
   drawbox: {
     position: 'relative'
