@@ -22,7 +22,7 @@ Upon clicking the `Save to Gallery` button, the app takes a screenshot of the co
 
 - `react-native-view-shot`: To take a screenshot of the panel
 - `react-native-fs`: To save the image to local storage
-- `react-native-fetch-blob`: To transfer the image file to the phone's gallery
+- `react-native-fetch-blob`: To transfer image file to phone's gallery
 
 ```javascript
   class SaveButton extends Component {
