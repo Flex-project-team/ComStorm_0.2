@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
     height: 300,
     width: 325,
     margin: 10,
-    backgroundColor: '#FBFBFA',
+    backgroundColor: '#FFFFFF',
     borderRadius: 6,
     borderWidth: 0.5,
     borderColor: 'black'
@@ -171,7 +171,7 @@ const styles = StyleSheet.create({
   },
   backToHome: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     alignItems: 'center',
     marginTop: 1,
     marginBottom: 1

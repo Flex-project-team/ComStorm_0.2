@@ -43,8 +43,8 @@ Upon clicking the `Save to Gallery` button, the app takes a screenshot of the co
       RNFS.copyFile(localFilePath, destFileLocation)
         .then(() => console.log("Copied File"));
       RNFetchBlob.fs.scanFile([ { path: destFileLocation, mime: "image/jpeg" } ])
-        .then(() => console.log("scan file success"));
-        .catch((err) => console.log("scan file error"));
+        .then(() => console.log("Scanned image file successfully"));
+        .catch((err) => console.log("Unable to scan image file"));
     }
   }
 ```
