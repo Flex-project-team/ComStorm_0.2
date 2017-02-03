@@ -79,7 +79,6 @@ var styles = StyleSheet.create({
     justifyContent: "flex-start"
   },
   capContainer: {
-    borderBottomColor: "#DDDDDD",
     borderBottomWidth: 1,
     paddingRight: 20,
     paddingLeft: 20,
@@ -101,6 +100,7 @@ var styles = StyleSheet.create({
       left: 10,
     },
     txtCaptionInput: {
+      borderBottomColor: "#DDDDDD",
       fontStyle: 'italic',
       zIndex: 4,
       width: 240,
