@@ -17,7 +17,7 @@ export default class DrawingBox extends Component {
     let images = [...this.props.images];
     let rendered_objects = null;
     //If there are images to render in the box
-    if (this.indices) {
+    if (this.indices && this.indices.length > 0) {
       rendered_objects = this.indices.map((idx, key) => (<View key={key}>{images[idx]}</View>))
       return (
         <View style={styles.view}>
