@@ -41,7 +41,6 @@ export default class TextBubble extends React.Component {
       charLimit = 60;
     }
 
-
     return (
         <Image source={img} style={containerStyle}>
           <TextInput
