@@ -10,7 +10,7 @@ ComStorm is a mobile app for creating comic panels, built using React Native, fo
 
 ![drawing_box1](docs/screenshots/clickndrag.png)
 
-### Elements With Wrapped Text Input
+### Text Bubbles and Captions
 
 ![drawing_box2](docs/screenshots/text_input.png)
 
