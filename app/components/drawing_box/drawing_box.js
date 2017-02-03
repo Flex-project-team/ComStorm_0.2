@@ -6,7 +6,7 @@ const dismissKeyboard = require('dismissKeyboard');
 export default class DrawingBox extends Component {
   constructor(props) {
     super(props);
-    this.state = {indices: []}
+    this.state = {indices: []};
   }
 
   componentWillReceiveProps(newProps) {
@@ -32,10 +32,10 @@ export default class DrawingBox extends Component {
     //This is the view when the box is empty
     else {
       return (
-        <View style={styles.view}>
-          <Text>Tap items on the slider to place them in this box and drag word clouds by the tail</Text>
+        <View style={styles.textView}>
+          <Text style={styles.placeholderText}>Tap items on the slider to place them in this box and drag word clouds by the tail</Text>
         </View>
-      )
+      );
     }
   }
 }
@@ -58,7 +58,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap'
   },
-  scrollview: {
-    backgroundColor: '#FBF081'
+  textView: {
+    height: 300,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  placeholderText: {
+    fontFamily: 'coming_soon',
+    color: '#B2B29C',
+    textAlign: 'center',
+    padding: 10
   }
 });
