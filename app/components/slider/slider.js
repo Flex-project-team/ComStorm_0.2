@@ -14,12 +14,21 @@ export default class Slider extends Component {
 
   handleClick(index) {
     this.clickedItems.push(index);
-    let clickedItems = this.clickedItems;
-    this.setState({clickedItems: clickedItems});
+    this.setState({clickedItems: this.clickedItems});
   }
 
   navigateHome() {
     this.props.navigator.push({ name: "MainScene"});
+  }
+
+  clearPage() {
+    this.clickedItems = [];
+    this.setState({clickedItems: []});
+  }
+
+  undoItem() {
+    this.clickedItems.pop();
+    this.setState({clickedItems: this.clickedItems});
   }
 
   render() {
@@ -95,8 +104,13 @@ export default class Slider extends Component {
             </Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.backToHome}>
-            <Text style={styles.backToHomeText}>
+            <Text style={styles.backToHomeText} onPress={this.clearPage.bind(this)}>
               Clear Comic
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.backToHome}>
+            <Text style={styles.backToHomeText} onPress={this.undoItem.bind(this)}>
+              Undo Last Item
             </Text>
           </TouchableOpacity>
         </View>
