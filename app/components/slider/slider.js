@@ -34,34 +34,34 @@ export default class Slider extends Component {
 
   render() {
     let imageFiles = [
-      require(`../../images/calling.png`),
-      require(`../../images/cry.png`),
-      require(`../../images/handstand.png`),
-      require(`../../images/question.png`),
-      require(`../../images/slide.png`),
-      require(`../../images/fight.png`),
-      require(`../../images/flower.png`),
-      require(`../../images/gymnastics.png`),
-      require(`../../images/happy.png`),
-      require(`../../images/man.png`),
-      require(`../../images/business-man.png`),
-      require(`../../images/confused-man.png`),
-      require(`../../images/doctor.png`),
-      require(`../../images/potato.png`),
-      require(`../../images/doctor.png`),
-      require(`../../images/happy-pencil.png`),
-      require(`../../images/happy-sun.png`),
-      require(`../../images/snowman.png`),
-      require(`../../images/surprised-wolf.png`)
+      require(`./calling.png`),
+      require(`./cry.png`),
+      require(`./handstand.png`),
+      require(`./question.png`),
+      require(`./slide.png`),
+      require(`./fight.png`),
+      require(`./flower.png`),
+      require(`./gymnastics.png`),
+      require(`./happy.png`),
+      require(`./man.png`),
+      require(`./business-man.png`),
+      require(`./confused-man.png`),
+      require(`./doctor.png`),
+      require(`./potato.png`),
+      require(`./doctor.png`),
+      require(`./happy-pencil.png`),
+      require(`./happy-sun.png`),
+      require(`./snowman.png`),
+      require(`./surprised-wolf.png`)
     ];
 
     let bubbleImages = [
-      require(`../../images/speech-down.png`),
-      require(`../../images/speech-left.png`),
-      require(`../../images/speech-right.png`),
-      require(`../../images/thought-left.png`),
-      require(`../../images/thought-right.png`),
-      require('../../images/caption.png'),
+      require(`./speech-down.png`),
+      require(`./speech-left.png`),
+      require(`./speech-right.png`),
+      require(`./thought-left.png`),
+      require(`./thought-right.png`),
+      require('./caption.png'),
     ];
 
     let imageViews = imageFiles.map((file, idx) => {
