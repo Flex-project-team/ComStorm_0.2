@@ -1,5 +1,8 @@
 # ComStorm
 
+[Demo] [appetize]
+[appetize]: https://appetize.io/app/kdwf1bge5u8abnak3qgqv898xc?device=nexus5&scale=75&orientation=portrait&osVersion=7.0
+
 ## Background
 
 ComStorm is a mobile app for creating comic panels, built using React Native, for Android platform. This app is intended to improve the poor quality of content in newspaper comics after the retirement of Bill Watterson. With how easy it is to get carpal tunnel syndrome, this app might end up saving lives :).
