@@ -4,7 +4,7 @@
 
 [Play Store] [play_link]
 
-[appetize]: https://appetize.io/app/kdwf1bge5u8abnak3qgqv898xc?device=nexus5&scale=75&orientation=portrait&osVersion=7.0
+[appetize]: https://appetize.io/app/kdwf1bge5u8abnak3qgqv898xc?device=nexus5&scale=100&orientation=portrait&osVersion=7.0
 [play_link]: https://play.google.com/store/apps/details?id=com.comstorm2&hl=en
 
 ## Background
@@ -17,9 +17,25 @@ ComStorm is a mobile app for creating comic panels, built using React Native, fo
 
 ![drawing_box1](docs/screenshots/clickndrag.png)
 
-### Add Text Input in Speech and Thought Bubbles
+### Text Bubbles and Captions
 
 ![drawing_box2](docs/screenshots/text_input.png)
+
+There are three types of text input which can be added to the scene. Each gets wrapped in a draggable element (described above) upon being rendered in the drawing area. A onPress handler which calls dismissKeyboard was applied to a TouchableWithoutFeedback tag which wraps the drawing area to dismiss the keyboard upon pressing any empty space in the drawing area.
+
+```javascript
+  <TouchableWithoutFeedback style={styles.dismiss} onPress={() => dismissKeyboard()}>
+    <View style={styles.view}>
+      {rendered_objects}
+    </View>
+  </TouchableWithoutFeedback>
+```
+
+#### Speech and Thought Bubbles
+The text-in-bubble effect was implemented by applying position: relative to the image of a speech or thought bubble, and position: absolute on the textInput element to achieve the overlay effect. Carefully chosen character limits and sizing ensure a good fit.
+
+#### Captions
+Captions can be added by clicking the 'Add Caption' element in the slider. This element uses the same logic as the speech and thought bubbles but different styling was applied using a conditional check for the filename.
 
 ### Save Comics to Phone Gallery
 
