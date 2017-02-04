@@ -1,7 +1,7 @@
 # ComStorm
 
 [Demo] [appetize]
-[appetize]: https://appetize.io/app/kdwf1bge5u8abnak3qgqv898xc?device=nexus5&scale=75&orientation=portrait&osVersion=7.0
+[appetize]: https://appetize.io/app/kdwf1bge5u8abnak3qgqv898xc?device=nexus5&scale=100&orientation=portrait&osVersion=7.0
 
 ## Background
 
