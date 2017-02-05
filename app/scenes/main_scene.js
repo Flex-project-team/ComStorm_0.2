@@ -26,10 +26,10 @@ export default class MainScene extends Component {
         </View>
         <View style={styles.main}>
           <View style={styles.imageContainer}>
-            <Image source={require('../images/character.png')} style={styles.example}/>
+            <Image source={require('../images/example1.png')} resizeMode={Image.resizeMode.contain} style={styles.example}/>
           </View>
           <View style={styles.imageContainer}>
-            <Image source={require('../images/gimme-a-break.png')} style={styles.example}/>
+            <Image source={require('../images/gimme-a-break.png')} resizeMode={Image.resizeMode.contain} style={styles.example}/>
           </View>
           <TouchableOpacity style={styles.button} onPress={this.createComicScreen.bind(this)}>
             <Text style={styles.buttonText}>
@@ -60,18 +60,18 @@ const styles = StyleSheet.create({
   imageContainer: {
     backgroundColor: 'white',
     borderRadius: 7,
-    margin: 8,
-    width: 200,
+    marginTop: 8,
+    width: 210,
+    height: 210,
     justifyContent: 'center',
     alignItems: 'center'
   },
   example: {
-    margin: 10,
-    width: 115,
-    height: 160,
+    width: 205,
+    height: 205
   },
   button: {
-    marginTop: 25,
+    marginTop: 8,
     backgroundColor: '#FACC11',
     padding: 13,
     borderRadius: 4
